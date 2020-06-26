@@ -4,7 +4,7 @@ import { IRootComponentProps } from "./IRootComponentProps";
 import RootStore, { rootInit } from "./RootStore";
 import NavHome from "../Navigation/NavHome";
 
-import Test1 from "../Test1/Test1";
+import Test1 from "../Test1/ListTest1";
 
 const RootComponent: React.FC<IRootComponentProps> = (props) => {
   return (

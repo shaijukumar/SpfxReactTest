@@ -3,21 +3,32 @@ import { SPService } from "../../../../Common/SPService";
 
 export default class BaseStore {
   spContext: WebPartContext;
+  siteUrl: string;
   spService: any;
   listName: string;
   setLoading: any;
   setSubmitting: any;
   rootItems: any[] = [];
+  rootItem: any;
 
   constructor(spContext: WebPartContext, listName: string) {
+    //debugger;
     this.listName = listName;
-    this.spService = SPService(this.spContext);
+    this.siteUrl = spContext.pageContext.site.absoluteUrl;
+    this.spService = SPService(this.spContext, this.siteUrl);
   }
 
   rootGetAllItems = async () => {
     this.rootItems = await this.spService.getAllListItems(this.listName);
     await this.Sleep();
     return this.rootItems;
+  };
+
+  rootGetItemById = async (id: string) => {
+    //debugger;
+    this.rootItem = await this.spService.getItemById(this.listName, id);
+    await this.Sleep();
+    return this.rootItem;
   };
 
   rootcreateListItem = async (data: any) => {
