@@ -19,7 +19,7 @@ export const rootInit = (spContext: WebPartContext): any => {
       setMeTest,
       welcomeStore,
       newsStore,
-      testStore,      
+      testStore,
     };
   }, [spContext, meTest, setMeTest, welcomeStore, newsStore, testStore]);
 

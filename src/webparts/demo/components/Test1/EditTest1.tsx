@@ -4,17 +4,6 @@ import RootStore from "../RootComponent/RootStore";
 import { Link, RouteComponentProps, useParams, useHistory } from 'react-router-dom';
 import { Button } from '@material-ui/core';
 
-import { makeStyles } from '@material-ui/core/styles';
-import Table from '@material-ui/core/Table';
-import TableBody from '@material-ui/core/TableBody';
-import TableCell from '@material-ui/core/TableCell';
-import TableContainer from '@material-ui/core/TableContainer';
-import TableHead from '@material-ui/core/TableHead';
-import TableRow from '@material-ui/core/TableRow';
-import Paper from '@material-ui/core/Paper';
-
-import TextField from '@material-ui/core/TextField';
-
 import AppFormField from "../forms/AppFormField";
 import SubmitButton from "../forms/SubmitButton";
 import {
@@ -30,26 +19,6 @@ import {
 
 import * as Yup from "yup";
 import { Test1 } from "./TestStore";
-
-const useStyles = makeStyles({
-    table: {
-        minWidth: 650,
-    },
-    fieldLabel: {
-        backgroundColor: "#e6ebe9",
-        padding: 5,
-        width: "150px",
-        textAlign: "right"
-
-    },
-    fieldValue: {
-        backgroundColor: "#f0f5f3",
-        padding: 5,
-        width: "350px",
-        textAlign: "left"
-
-    },
-});
 
 interface MyFormValues {
     Title: string;
@@ -123,22 +92,25 @@ const EditTest1: React.FC = () => {
 
                                 <SubmitButton title="Submit" />
 
-                                {test1.Id &&
-                                    <Button variant="contained"
-                                        color="primary"
-                                        onClick={() => {
-                                            testStore.deleteListItem(test1.Id.toString()).then(() => {
-                                                history.push(`/`);
-                                            })
-                                                .catch((err: string) => {
-                                                    debugger;
-                                                    console.log(err);
-                                                });
-                                            ;
-                                        }}
-                                    >
-                                        Delete
-                                    </Button>
+                                {test1.Id > 0 &&
+                                    (
+                                        <Button variant="contained"
+                                            color="primary"
+                                            onClick={() => {
+                                                testStore.deleteListItem(test1.Id.toString()).then(() => {
+                                                    history.push(`/`);
+                                                })
+                                                    .catch((err: string) => {
+                                                        debugger;
+                                                        console.log(err);
+                                                    });
+                                                ;
+                                            }}
+                                        >
+                                            Delete
+                                        </Button>
+                                    )
+
                                 }
 
                                 <Button variant="contained"

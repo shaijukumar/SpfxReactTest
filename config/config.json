@@ -9,10 +9,19 @@
           "manifest": "./src/webparts/demo/DemoWebPart.manifest.json"
         }
       ]
+    },
+    "portal-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/portal/PortalWebPart.js",
+          "manifest": "./src/webparts/portal/PortalWebPart.manifest.json"
+        }
+      ]
     }
   },
   "externals": {},
   "localizedResources": {
-    "DemoWebPartStrings": "lib/webparts/demo/loc/{locale}.js"
+    "DemoWebPartStrings": "lib/webparts/demo/loc/{locale}.js",
+    "PortalWebPartStrings": "lib/webparts/portal/loc/{locale}.js"
   }
 }

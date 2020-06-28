@@ -18,5 +18,5 @@ const News: React.FC<IListItemsProps> = (props) => {
         </div>
     );
 };
-//export default TestComp;
+//export default TestComp; 
 export default News;
