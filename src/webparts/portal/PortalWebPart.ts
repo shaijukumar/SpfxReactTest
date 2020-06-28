@@ -9,8 +9,6 @@ import { BaseClientSideWebPart } from "@microsoft/sp-webpart-base";
 import * as jQuery from "jquery";
 
 import * as strings from "PortalWebPartStrings";
-import Portal from "./components/Portal";
-import { IPortalProps } from "./components/IPortalProps";
 
 import PortalRoot from "../portal/components/PortalRoot/PortalRoot";
 import { IPortalRootProps } from "./components/PortalRoot/IPortalRootProps";
@@ -36,22 +34,20 @@ export default class PortalWebPart extends BaseClientSideWebPart<
   IPortalWebPartProps
 > {
   public onInit(): Promise<void> {
-    fixWorkbench();
+    //fixWorkbench();
     return super.onInit().then((_) => {
-      jQuery("#workbenchPageContent").prop("style", "max-width: none");
-      jQuery(".SPCanvas-canvas").prop("style", "max-width: none");
-      jQuery(".CanvasZone").prop("style", "max-width: none");
-
-      setTimeout(() => {
-        var myElement = jQuery(
-          'button[data-automation-id="workbench-command-bar-preview"]'
-        ).click();
-
-        jQuery(".dragIconContainer_90be1210").prop(
-          "style",
-          "visibility: hidden"
-        );
-      }, 200);
+      // jQuery("#workbenchPageContent").prop("style", "max-width: none");
+      // jQuery(".SPCanvas-canvas").prop("style", "max-width: none");
+      // jQuery(".CanvasZone").prop("style", "max-width: none");
+      // setTimeout(() => {
+      //   var myElement = jQuery(
+      //     'button[data-automation-id="workbench-command-bar-preview"]'
+      //   ).click();
+      //   jQuery(".dragIconContainer_90be1210").prop(
+      //     "style",
+      //     "visibility: hidden"
+      //   );
+      // }, 200);
     });
   }
 

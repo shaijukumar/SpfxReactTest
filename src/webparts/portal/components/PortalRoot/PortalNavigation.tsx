@@ -7,18 +7,20 @@ import {
   Switch,
   HashRouter,
   PropsRoute,
-  RouteComponentProps
+  RouteComponentProps,
 } from "react-router-dom";
+
+import "../../Style/PortalStyle.css";
+import "../../Style/materialize.min.css";
 
 import Welcome from "../Welcome/Welcome";
 import HomePage from "../HomePage/HomePage";
-
 
 const PortalNavigation: React.FC<RouteComponentProps> = (location) => {
   return (
     <Router>
       <div>
-        <div>
+        {/* <div>
           <div style={{ float: "left", paddingRight: "10px" }}>
             <Link to="/">HomePage</Link>{" "}
           </div>
@@ -26,8 +28,7 @@ const PortalNavigation: React.FC<RouteComponentProps> = (location) => {
             <Link to="/Welcome">Welcome</Link>
           </div>
         </div>
-        <br />
-
+        <br /> */}
         <Switch>
           <Route path="/Welcome">
             <Welcome />

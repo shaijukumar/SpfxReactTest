@@ -12,7 +12,7 @@ export default class PortalBaseStore {
   rootItem: any;
 
   constructor(spContext: WebPartContext, listName: string) {
-    //debugger;
+    debugger;
     this.listName = listName;
     this.siteUrl = spContext.pageContext.site.absoluteUrl;
     this.spService = SPService(this.spContext, this.siteUrl);

@@ -14,7 +14,7 @@ export default class PortalBaseStore {
   constructor(spContext: WebPartContext, listName: string) {
     //debugger;
     this.listName = listName;
-    this.siteUrl = spContext.pageContext.site.absoluteUrl;
+    this.siteUrl = spContext.pageContext.site.absoluteUrl + "/PortalArabic";
     this.spService = SPService(this.spContext, this.siteUrl);
   }
 

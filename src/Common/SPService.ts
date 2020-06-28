@@ -13,6 +13,10 @@ export const SPService = (spContext: WebPartContext, siteUrl: string) => {
       spfxContext: spContext,
     });
   }
+  const currentUserDetails = async () => {
+    const profile = await sp.profiles.myProperties.get();
+    return profile;
+  };
 
   const getAllListItems = async (ListName) => {
     try {
@@ -67,7 +71,7 @@ export const SPService = (spContext: WebPartContext, siteUrl: string) => {
       return [];
     }
   };
- 
+
   const createListItem = async (ListName, data) => {
     debugger;
     try {
@@ -88,5 +92,6 @@ export const SPService = (spContext: WebPartContext, siteUrl: string) => {
     createListItem,
     getItemById,
     deleteListItem,
+    currentUserDetails,
   };
 };

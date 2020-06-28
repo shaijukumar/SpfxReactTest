@@ -32,9 +32,11 @@
     "mobx": "2.4.1",
     "mobx-react": "^6.2.2",
     "mobx-react-lite": "^2.0.7",
+    "moment": "^2.27.0",
     "office-ui-fabric-react": "6.189.2",
     "react": "16.8.5",
     "react-dom": "16.8.5",
+    "react-moment": "^0.9.7",
     "react-router-dom": "^5.2.0",
     "rxjs": "^6.0.0",
     "yup": "^0.29.1"

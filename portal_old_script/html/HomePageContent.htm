@@ -1,136 +1,224 @@
-﻿<section class="container home"  >	
-    <div class="welcomeWrapper" >
-        <div class="row">            
-		<!--div class="col s12 m4 left-align">  أهلا بك  </div-->
-        <div ng-if="(today|date:'a')=='PM' " class="col s12 m4 left-align "> {{WelcomePanel.PMMessage}} {{UserProfilePanel.DisplayName}}</div>
- 	   <div ng-if="(today|date:'a')=='AM' " class="col s12 m4 left-align"> {{WelcomePanel.AMMessage}}  {{UserProfilePanel.DisplayName}}</div>
- 	   <div class="col s12 m4"></div>
- 	   <div class="col s12 m4 right-align hide-on-med-and-down" dir="ltr">
-              {{todayWeek}} , <span class="date">{{today | date : "dd/MM/yyyy"}} </span>           
-        </div>
-        </div>
+﻿<section class="container home">
+  <div class="welcomeWrapper">
+    <div class="row">
+      <!--div class="col s12 m4 left-align">  أهلا بك  </div-->
+      <div ng-if="(today|date:'a')=='PM' " class="col s12 m4 left-align">
+        {{WelcomePanel.PMMessage}} {{UserProfilePanel.DisplayName}}
+      </div>
+      <div ng-if="(today|date:'a')=='AM' " class="col s12 m4 left-align">
+        {{WelcomePanel.AMMessage}} {{UserProfilePanel.DisplayName}}
+      </div>
+      <div class="col s12 m4"></div>
+      <div class="col s12 m4 right-align hide-on-med-and-down" dir="ltr">
+        {{todayWeek}} ,
+        <span class="date">{{today | date : "dd/MM/yyyy"}} </span>
+      </div>
     </div>
-    
-    <!-- Announcements -->
-    <div class="card announcements icons slider"  id="AnnouncementsCarousel">
-    	<ul class="slides" >
-	      <li ng-repeat="x in AnnouncementsData |orderBy:['-ArticleStartDate ','-ID'] " on-finish-render-MOPADir="AnnouncementsRendered">
-	        <div class="row">
-                	<div class="col s12 m4 hide-on-small-only">
-                        <!--a href="{{GeneralSettings.SubSiteUrl}}/Pages/AnnouncementsDetails.aspx?annid={{x.ID}}"-->
-                            <img ng-src="{{x.PublishingPageImage}}" >
-                        <!--/a-->
-                    </div>
-                    <div class=" col s12 m8">
-                   	 <div class="card-content">
-                    	<span class="card-title"><span class="icon icon-latestAnnouncements"></span>{{HomePanel.Announcements}}</span>
-                        <div class="caption left-align">                            
-                            <h2 class="right-align"><a href="#!/AnnouncementsDetails/{{x.ID}}">{{x.ArticleByLine | limitTo:120 }}{{x.ArticleByLine.length > 120 ? '...' : ''}}</a></h2>
-                            <p class="right-align">
-                            <span class="siteDepartment">
-                            	<span class="badgeTag"  ng-class="{'GeneralTag':  (GeneralSettings.DefaultDept === x.Department || !x.Department )}"><span></span>{{x.Department ? x.Department : GeneralSettings.DefaultDept}}</span>&nbsp;|</span>
-                            	<span class="date">{{x.ArticleStartDate | date: "dd/MM/yyyy"}}</span></p>
-                        </div>
-                      </div>
-                    </div>
-                </div>
-	      </li>
-	     </ul>
-        <div class="carousel-fixed-item">
-            <a href="#!announcements" class="btn waves-effect">{{HomePanel.ViewAll}}</a>
-        </div>
-    </div>
-    <!-- end of Announcements -->
-    <div class="row divre-order">
-    	<div class="col s12 m12 l9">
-    		<!-- News -->
-    	</div>
-    	
-    	 <div class="col s12  l3">
-    	 
-    	 	<!-- CEO message -->
-    	 	<div class="card ceoMessage icons small">
-                <div class="card-content">
-                    <span class="card-title"><span class="icon icon-ceoMessage"></span> {{HomePanel.CEOMessage }}</span>
-                    <div class="row">
-                        <div class="col s12">
-                            <p id="CEOMesage" class="lead">{{CEOMesage}}</p>
-                            <span id="CEOAuthor">{{CEOAuthor}}</span>
-                        </div>
-                    </div>
-					<a href="{{GeneralSettings.SubSiteUrl}}/Pages/About.aspx" class="viewAll" id="CEOreadmore">{{HomePanel.CEOMessageReadMore }}</a>
-                </div>
-            </div>
-    	 	<!-- end CEO message -->
-    	 	
-    	 	<!-- Policies -->
-            <div class="card icons small" ng-controller="policyController">
-                <div class="card-content">
-                    <span class="card-title">
-                        <span class="icon icon-policies"></span>{{HomePanel.Policies}}</span>
-                    <div class="slick small" data-indicators="true" id="PoliciesCarousel">
-                        <div class="" ng-repeat="PolicyList in policiesData  | limitTo: 3" on-finish-render-MOPADir="PoliciesCarousel">
-                            <div class="row" ng-repeat="policy in PolicyList | limitTo: 3">
-                                <div class="col s12">
-                                    <h6 class="truncate singleLine">
-                                        <a target="_self" class="modal-trigger" ng-click="SelectPolicy(policy)" title="{{policy.Policy_x0020_Name1}}">{{policy.Policy_x0020_Name1}}</a>
-                                    </h6>
-                                    <div>
-                                        <span class="siteDepartment">
-                                            <span class="badgeTag" ng-class="{'GeneralTag':  (GeneralSettings.DefaultDept === policy.Department || !policy.Department )}">
-                                                <span></span>{{policy.Department}}</span>&nbsp;|</span>
-                                        <span class="date">{{policy.Modified | date: "dd/MM/yyyy"}}</span>&nbsp;|&nbsp;
-                                        <span class="englabel">V{{policy.OData__UIVersionString}}</span>
-                                    </div>
-                                    <div class="divider"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <a href="{{GeneralSettings.SubSiteUrl}}/Pages/Policies.aspx" class="viewAll">{{HomePanel.ViewAll}}</a>
-                </div>
-                <div id="policies" class="modal modal-fixed-footer documentsView ">
-                    <div class="modal-header icons">
-                        <h1 class="truncate singleLine">{{PolicyData.Policy_x0020_Name1}} </h1>
-                        <div class="">
-                            <span class="siteDepartment">
-                                <span class="badgeTag" ng-class="{'GeneralTag':  (GeneralSettings.DefaultDept === PolicyData.Department || !PolicyData.Department )}">
-                                    <span></span>{{PolicyData.Department}}</span>&nbsp;| </span>
-                            <span class="date">{{PolicyData.Modified | date: "dd/MM/yyyy" }}</span>&nbsp;|&nbsp;
-                            <span class="englabel">V{{PolicyData.OData__UIVersionString}} </span>
-                        </div>
-                        <a href="#" class="modal-close icon icon-modal-close tooltipped" data-position="bottom" data-delay="100" data-tooltip="إغلاق">
-                            <!--img src="/_catalogs/masterpage/GSMOPA/images/modal-close.png" /-->
-                        </a>
-                        <a href="#" class="toggleSize icon icon-maximize tooltipped " data-position="bottom" data-delay="100" data-tooltip="تكبير"></a>
-                        <a href="#" class="toggleSize icon icon-minimize tooltipped " data-position="bottom" data-delay="100" data-tooltip="تصغير"></a>
-                    </div>
-                    <div class="modal-content">
+  </div>
 
-                        <!--
+  <!-- Announcements -->
+  <div class="card announcements icons slider" id="AnnouncementsCarousel">
+    <ul class="slides">
+      <li
+        ng-repeat="x in AnnouncementsData |orderBy:['-ArticleStartDate ','-ID'] "
+        on-finish-render-MOPADir="AnnouncementsRendered"
+      >
+        <div class="row">
+          <div class="col s12 m4 hide-on-small-only">
+            <!--a href="{{GeneralSettings.SubSiteUrl}}/Pages/AnnouncementsDetails.aspx?annid={{x.ID}}"-->
+            <img ng-src="{{x.PublishingPageImage}}" />
+            <!--/a-->
+          </div>
+          <div class="col s12 m8">
+            <div class="card-content">
+              <span class="card-title"
+                ><span class="icon icon-latestAnnouncements"></span
+                >{{HomePanel.Announcements}}</span
+              >
+              <div class="caption left-align">
+                <h2 class="right-align">
+                  <a href="#!/AnnouncementsDetails/{{x.ID}}"
+                    >{{x.ArticleByLine | limitTo:120 }}{{x.ArticleByLine.length
+                    > 120 ? '...' : ''}}</a
+                  >
+                </h2>
+                <p class="right-align">
+                  <span class="siteDepartment">
+                    <span
+                      class="badgeTag"
+                      ng-class="{'GeneralTag':  (GeneralSettings.DefaultDept === x.Department || !x.Department )}"
+                      ><span></span>{{x.Department ? x.Department :
+                      GeneralSettings.DefaultDept}}</span
+                    >&nbsp;|</span
+                  >
+                  <span class="date"
+                    >{{x.ArticleStartDate | date: "dd/MM/yyyy"}}</span
+                  >
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
+    <div class="carousel-fixed-item">
+      <a href="#!announcements" class="btn waves-effect"
+        >{{HomePanel.ViewAll}}</a
+      >
+    </div>
+  </div>
+  <!-- end of Announcements -->
+  <div class="row divre-order">
+    <div class="col s12 m12 l9">
+      <!-- News -->
+    </div>
+
+    <div class="col s12 l3">
+      <!-- CEO message -->
+      <div class="card ceoMessage icons small">
+        <div class="card-content">
+          <span class="card-title"
+            ><span class="icon icon-ceoMessage"></span> {{HomePanel.CEOMessage
+            }}</span
+          >
+          <div class="row">
+            <div class="col s12">
+              <p id="CEOMesage" class="lead">{{CEOMesage}}</p>
+              <span id="CEOAuthor">{{CEOAuthor}}</span>
+            </div>
+          </div>
+          <a
+            href="{{GeneralSettings.SubSiteUrl}}/Pages/About.aspx"
+            class="viewAll"
+            id="CEOreadmore"
+            >{{HomePanel.CEOMessageReadMore }}</a
+          >
+        </div>
+      </div>
+      <!-- end CEO message -->
+
+      <!-- Policies -->
+      <div class="card icons small" ng-controller="policyController">
+        <div class="card-content">
+          <span class="card-title">
+            <span class="icon icon-policies"></span>{{HomePanel.Policies}}</span
+          >
+          <div class="slick small" data-indicators="true" id="PoliciesCarousel">
+            <div
+              class=""
+              ng-repeat="PolicyList in policiesData  | limitTo: 3"
+              on-finish-render-MOPADir="PoliciesCarousel"
+            >
+              <div class="row" ng-repeat="policy in PolicyList | limitTo: 3">
+                <div class="col s12">
+                  <h6 class="truncate singleLine">
+                    <a
+                      target="_self"
+                      class="modal-trigger"
+                      ng-click="SelectPolicy(policy)"
+                      title="{{policy.Policy_x0020_Name1}}"
+                      >{{policy.Policy_x0020_Name1}}</a
+                    >
+                  </h6>
+                  <div>
+                    <span class="siteDepartment">
+                      <span
+                        class="badgeTag"
+                        ng-class="{'GeneralTag':  (GeneralSettings.DefaultDept === policy.Department || !policy.Department )}"
+                      >
+                        <span></span>{{policy.Department}}</span
+                      >&nbsp;|</span
+                    >
+                    <span class="date"
+                      >{{policy.Modified | date: "dd/MM/yyyy"}}</span
+                    >&nbsp;|&nbsp;
+                    <span class="englabel"
+                      >V{{policy.OData__UIVersionString}}</span
+                    >
+                  </div>
+                  <div class="divider"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <a
+            href="{{GeneralSettings.SubSiteUrl}}/Pages/Policies.aspx"
+            class="viewAll"
+            >{{HomePanel.ViewAll}}</a
+          >
+        </div>
+        <div id="policies" class="modal modal-fixed-footer documentsView">
+          <div class="modal-header icons">
+            <h1 class="truncate singleLine">
+              {{PolicyData.Policy_x0020_Name1}}
+            </h1>
+            <div class="">
+              <span class="siteDepartment">
+                <span
+                  class="badgeTag"
+                  ng-class="{'GeneralTag':  (GeneralSettings.DefaultDept === PolicyData.Department || !PolicyData.Department )}"
+                >
+                  <span></span>{{PolicyData.Department}}</span
+                >&nbsp;|
+              </span>
+              <span class="date"
+                >{{PolicyData.Modified | date: "dd/MM/yyyy" }}</span
+              >&nbsp;|&nbsp;
+              <span class="englabel"
+                >V{{PolicyData.OData__UIVersionString}}
+              </span>
+            </div>
+            <a
+              href="#"
+              class="modal-close icon icon-modal-close tooltipped"
+              data-position="bottom"
+              data-delay="100"
+              data-tooltip="إغلاق"
+            >
+              <!--img src="/_catalogs/masterpage/GSMOPA/images/modal-close.png" /-->
+            </a>
+            <a
+              href="#"
+              class="toggleSize icon icon-maximize tooltipped"
+              data-position="bottom"
+              data-delay="100"
+              data-tooltip="تكبير"
+            ></a>
+            <a
+              href="#"
+              class="toggleSize icon icon-minimize tooltipped"
+              data-position="bottom"
+              data-delay="100"
+              data-tooltip="تصغير"
+            ></a>
+          </div>
+          <div class="modal-content">
+            <!--
 					    <div class="topDiv"></div>					    
 					  -->
-                        <!--p>{{PolicyData.PolicyDescription}}</p-->
-                        <!--
+            <!--p>{{PolicyData.PolicyDescription}}</p-->
+            <!--
 						<iframe src="{{PolicyData.EncodedAbsUrl}}" width="100%" height="100%">
 							<p>It appears you don't have Adobe Reader or PDF support in this web browser.</p>
 						</iframe>				
 						<div ng-include="'/ar-ae/GSMOPAFiles/ar-ae/PolicyViewer.html'" style=" background-color: lightblue;height: 100%; overflow: auto;" id="PolicyViewerDIV1" ></div>						
 						-->
-                        <iframe src="{{PolicyData.IframeUrl}}" width="100%" height="100%" class="webAppsDoc"></iframe>
-
-                    </div>
-                    <div class="modal-footer">
-                        <div class="">
-                            <!--h6>{{PolicyVariation.PolicyDescription}}</h6-->
-                            <p>{{PolicyData.PolicyDescription}}</p>
-                        </div>
-
-                    </div>
-                </div>
+            <iframe
+              src="{{PolicyData.IframeUrl}}"
+              width="100%"
+              height="100%"
+              class="webAppsDoc"
+            ></iframe>
+          </div>
+          <div class="modal-footer">
+            <div class="">
+              <!--h6>{{PolicyVariation.PolicyDescription}}</h6-->
+              <p>{{PolicyData.PolicyDescription}}</p>
             </div>
-            <!-- end of Policies -->
-    	 	
-    	 </div>
-    </div>   
+          </div>
+        </div>
+      </div>
+      <!-- end of Policies -->
+    </div>
+  </div>
 </section>
