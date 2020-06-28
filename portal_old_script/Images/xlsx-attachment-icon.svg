@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.6 (67491) - http://www.bohemiancoding.com/sketch -->
+    <title>iconfinder_logo_brand_brands_logos_excel_2993694 (1) 2</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="-45%" y1="25%" x2="93.536377%" y2="101.964654%" id="linearGradient-1">
+            <stop stop-color="#000000" stop-opacity="0.1" offset="0%"></stop>
+            <stop stop-color="#000000" stop-opacity="0" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="-0.00582517571%" y1="49.9977372%" x2="100.000358%" y2="49.9977372%" id="linearGradient-2">
+            <stop stop-color="#FFFFFF" offset="0%"></stop>
+            <stop stop-color="#000000" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="ICONS" transform="translate(-150.000000, -93.000000)">
+            <g id="iconfinder_logo_brand_brands_logos_excel_2993694-(1)-2" transform="translate(150.000000, 93.000000)">
+                <g id="iconfinder_logo_brand_brands_logos_excel_2993694-(1)">
+                    <rect id="Rectangle" fill="#FFFFFF" x="12" y="3.5" width="11.5" height="17"></rect>
+                    <path d="M23.5,21 L13.5,21 C13.2236328,21 13,20.7763672 13,20.5 C13,20.2236328 13.2236328,20 13.5,20 L23,20 L23,4 L13.5,4 C13.2236328,4 13,3.7763672 13,3.5 C13,3.2236328 13.2236328,3 13.5,3 L23.5,3 C23.7763672,3 24,3.2236328 24,3.5 L24,20.5 C24,20.7763672 23.7763672,21 23.5,21 Z" id="Path" fill="#177848"></path>
+                    <polygon id="Path" fill="#177848" points="14 0 0 2.6086957 0 21.391304 14 24"></polygon>
+                    <polygon id="Path" fill="#FFFFFF" opacity="0.2" points="0 2.6087036 0 2.8587036 14 0.25 14 0"></polygon>
+                    <rect id="Rectangle" fill="#177848" x="13" y="5" width="4" height="2"></rect>
+                    <rect id="Rectangle" fill="#177848" x="18" y="5" width="4" height="2"></rect>
+                    <rect id="Rectangle" fill="#177848" x="13" y="8" width="4" height="2"></rect>
+                    <rect id="Rectangle" fill="#177848" x="18" y="8" width="4" height="2"></rect>
+                    <rect id="Rectangle" fill="#177848" x="13" y="11" width="4" height="2"></rect>
+                    <rect id="Rectangle" fill="#177848" x="18" y="11" width="4" height="2"></rect>
+                    <rect id="Rectangle" fill="#177848" x="13" y="14" width="4" height="2"></rect>
+                    <rect id="Rectangle" fill="#177848" x="18" y="14" width="4" height="2"></rect>
+                    <rect id="Rectangle" fill="#177848" x="13" y="17" width="4" height="2"></rect>
+                    <rect id="Rectangle" fill="#177848" x="18" y="17" width="4" height="2"></rect>
+                    <polygon id="Path" fill="#000000" opacity="0.1" points="0 21.3912964 14 24 14 23.75 0 21.1412964"></polygon>
+                    <path d="M23.5,21 C23.7763672,21 24,20.7763672 24,20.5 L24,13 L14,3 L14,21 L23.5,21 Z" id="Path" fill="url(#linearGradient-1)"></path>
+                    <polygon id="Path" fill="#FFFFFF" points="7.357666 12.5 9.6552734 8.3642578 9.6262817 8.3481445 7.8796387 8.4729004 6.5 10.9562378 5.225647 8.6624756 3.5758667 8.7802734 5.642334 12.5 3.5758667 16.2197266 5.225647 16.3375244 6.5 14.0437622 7.8796387 16.5270996 9.6262817 16.6518555 9.6552734 16.6357422"></polygon>
+                    <polygon id="Path" fill="url(#linearGradient-2)" opacity="0.05" points="14 0 0 2.6086957 0 21.3913037 14 24"></polygon>
+                    <path d="M23.5,3 L14,3 L14,0 L0,2.6087036 L0,21.3912964 L14,24 L14,21 L23.5,21 C23.7763672,21 24,20.7763672 24,20.5 L24,3.5 C24,3.2236328 23.7763672,3 23.5,3 Z" id="Path"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

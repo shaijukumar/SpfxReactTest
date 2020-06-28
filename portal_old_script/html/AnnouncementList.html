@@ -1,0 +1,117 @@
+﻿<section class="container"  ng-init="AnnouncementListingInit()">
+		<!--div class="breadcrumbWrapper">
+              <a href="{{GeneralSettings.SubSiteUrl}}" class="breadcrumb">{{AnnouncementsPanel.Home}}</a>
+              <span class="breadcrumb">{{AnnouncementsPanel.Announcements}}</span>              
+        </div-->
+    <h1>{{AnnouncementsPanel.Announcements}}</h1>
+    <div class="divider"></div>
+    <div class="row">
+    <!-- left column -->
+        <div class="col s12  l3 hide-on-med-and-down">
+
+            <div class="card filter">
+                <div class="card-content">
+
+                    <span class="card-title">{{SearchPanel.Filter}} </span>
+                    <!--a href="#" class="clearall btn btnclear" ng-click="ClearAll()"><img src="/_catalogs/masterpage/GSMOPA/Images/btnclear.svg"></a-->
+                    
+                    <p>
+                       <!-- <span class="badgeTag corporate"><span></span>{{SearchPanel.Corporate}}</span> -->
+                       
+                       <span ng-repeat="department in departments" ng-class="SelctedDepartmentFilter == department.Name ? 'SelectedDept' : '' "  class="badgeTag toggle siteDepartment" ng-click="FilterDepartment(department)"  ><span></span>{{department.Name}}</span>						 
+                    </p>
+                        <div class="">
+                        	<label>{{SearchPanel.SearchKeyword}}</label>
+                            <input type="text" class="w-100 closeClear" id="searchkeyword" autocomplete="off" ng-model="docSearchString" />
+                        </div>
+                        <h5>{{SearchPanel.Category}}</h5>
+                        <div ng-repeat="category in categories" id="categorieschkboxes">                                
+                                <label for="Category{{category.ID}}" class="inputCheck"> {{category.Name}} 
+	                                <input type="checkbox" class="filled-in" id="Category{{category.ID}}" ng-model="category.Value" />
+	                                <span class="checkmark"></span>
+                                </label>
+                         </div>
+                        <h5>{{SearchPanel.Timeperiod}}</h5>
+                        <!--div class="date-field">
+                            <label for="fromDate">{{SearchPanel.FromDate}}</label>
+                            <input id="fromDate" type="text"  autocomplete="off" class="validate w-100 date" placeholder={{SearchPanel.DateFormat}}  onchange="validateDate(this)" >                        
+                        </div>
+                        <div class="date-field">
+                            <label for="toDate">{{SearchPanel.ToDate}}</label>
+                            <input id="toDate" type="text"  autocomplete="off" class="validate w-100 date" placeholder={{SearchPanel.DateFormat}} onchange="validateDate(this)" >
+                        </div-->
+                        <div class="date-field">
+                        	<!--label for="fromDate">{{SearchPanel.FromDate}} - {{SearchPanel.ToDate}}</label-->
+                            <!--input id="searchDate" id="searchDate" type="text"  autocomplete="off" class="validate date dateRangePickerInline" placeholder={{SearchPanel.DateFormat}}  readonly="readonly" -->
+                            <input name="dateSearchStartDate" id="dateSearchStartDate" type="text" class="dateRangePicker OpensRight" placeholder="&#1578;&#1575;&#1585;&#1610;&#1582; &#1575;&#1604;&#1576;&#1583;&#1569;"  > 
+                        </div>
+                         <div >
+                            <input type="button" class="btn tertiary-btn" value={{SearchPanel.Filter}} ng-click="docSearchString= undefined;search()" />
+                            <a  target="_self" class="btn btn-flat" ng-click="ClearAll()">{{SearchPanel.ClearAll}}</a>
+                         </div>
+                    </div>
+            </div>
+        </div>
+        <!-- left column end-->
+        <!-- right column -->
+        <div class="col s12 m12 l9">
+            <div >
+                <div class="card listing"  dir-paginate="x in announcements|filter:{ ArticleByLine : docSearchString, Department:SelctedDepartmentFilter } | categoryFilter:categories | dateSearchFilter:DateSearch   | orderBy:['-ArticleStartDate ','-ID']  | itemsPerPage: 5 " current-page="currentPage" >
+                    <div class="card-content row">
+                    <div class="col s12 m3">
+                            <a href="#!/AnnouncementsDetails/{{x.ID}}" class="image">
+                            	<div  style="background: url({{x.PublishingPageImage}});"></div>
+                            </a>
+                        </div>
+                        <div class="col s12 m9 ">
+                            <a href="#!/AnnouncementsDetails/{{x.ID}}" class="card-title"> <!--href="{{GeneralSettings.SubSiteUrl}}/Pages/announcementsDetails.aspx?annid={{x.ID}}"-->
+                                <h6>{{x.ArticleByLine | limitTo:160 }}{{x.ArticleByLine.length > 160 ? '...' : ''}}</h6>
+                            </a>
+                            <p>{{x.PublishingPageContent | limitTo:260 }}{{x.PublishingPageContent.length > 260 ? '...' : ''}}</p> 
+                            <p>
+                            	<span class="siteDepartment"><span class="badgeTag {{x.Department}}"><span></span>{{x.Department}}</span>&nbsp;| </span>                            	
+                            	<span class="date">{{x.ArticleStartDate | date :"dd/MM/yyyy"}}</span></p>
+                        </div>
+						
+                    </div>
+                </div>                
+                <!-- Paging -->               
+				<div ui-view ></div>
+    			<dir-pagination-controls class="pagination" ></dir-pagination-controls>
+            </div>
+        </div>
+
+        
+
+    </div>
+    
+    
+</section>
+
+<style type="text/css">
+.ms-breadcrumb-box, .ms-cui-ribbonTopBars, #s4-ribbonrow, #sideNavBox{
+	display: none;
+}
+#s4-titlerow{
+	height: 0;
+	padding: 0;
+}
+
+div.article, div.welcome{
+	padding: 0;
+}
+/*
+.filter .badgeTag{
+	cursor:auto;
+}*/
+</style>
+
+<html xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"><head>
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:_dlc_DocId msdt:dt="string">AUVUK7J5Z7FY-2140384586-3</mso:_dlc_DocId>
+<mso:_dlc_DocIdItemGuid msdt:dt="string">580241e7-e72f-46af-9970-5f84698d8e7a</mso:_dlc_DocIdItemGuid>
+<mso:_dlc_DocIdUrl msdt:dt="string">http://itdev-spsapp:31648/ar-ae/_layouts/15/DocIdRedir.aspx?ID=AUVUK7J5Z7FY-2140384586-3, AUVUK7J5Z7FY-2140384586-3</mso:_dlc_DocIdUrl>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+

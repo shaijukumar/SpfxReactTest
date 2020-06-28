@@ -1,0 +1,287 @@
+﻿<script src="https://shaiju.sharepoint.com/PortalArabic/SiteAssets/portal/js/library/jquery-1.10.2.min.js" type="text/javascript"></script>
+<script src="https://shaiju.sharepoint.com/PortalArabic/SiteAssets/portal/js/library/angular.min.1.6.8.js" type="text/javascript"></script>
+<script src="https://shaiju.sharepoint.com/PortalArabic/SiteAssets/portal/js/library/materialize.min.js" type="text/javascript"></script>
+<script src="https://shaiju.sharepoint.com/PortalArabic/SiteAssets/portal/js/library/moment.min.js" type="text/javascript"></script>
+<script src="https://shaiju.sharepoint.com/PortalArabic/SiteAssets/portal/js/library/slick.min.js" type="text/javascript"></script>
+
+<script src="https://shaiju.sharepoint.com/PortalArabic/SiteAssets/portal/js/library/jquery-ui.min.js" type="text/javascript"></script>
+<script src="https://shaiju.sharepoint.com/PortalArabic/SiteAssets/portal/js/library/angular.min.1.6.8.js" type="text/javascript"></script>
+<script src="https://shaiju.sharepoint.com/PortalArabic/SiteAssets/portal/js/library/angular-route.js" type="text/javascript"></script>
+
+<script src="https://shaiju.sharepoint.com/PortalArabic/SiteAssets/portal/js/library/angular-drag-and-drop-lists.js" type="text/javascript"></script>
+<script src="https://shaiju.sharepoint.com/PortalArabic/SiteAssets/portal/js/library/daterangepicker.min.js" type="text/javascript"></script>
+<script src="https://shaiju.sharepoint.com/PortalArabic/SiteAssets/portal/js/library/dirPagination.js" type="text/javascript"></script>
+<script src="https://shaiju.sharepoint.com/PortalArabic/SiteAssets/portal/js/library/jquery.mCustomScrollbar.min.js" type="text/javascript"></script>
+
+<link rel="stylesheet" href="https://shaiju.sharepoint.com/PortalArabic/SiteAssets/portal/css/fullcalendar.css" />
+<link rel="stylesheet" href="https://shaiju.sharepoint.com/PortalArabic/SiteAssets/portal/css/jquery-ui.css" />
+<link rel="stylesheet" href="https://shaiju.sharepoint.com/PortalArabic/SiteAssets/portal/css/materialize.min.css" />
+<link rel="stylesheet" href="https://shaiju.sharepoint.com/PortalArabic/SiteAssets/portal/css/slick.css" />
+<link rel="stylesheet" href="https://shaiju.sharepoint.com/PortalArabic/SiteAssets/portal/css/styles.css" />
+<link rel="stylesheet" href="https://shaiju.sharepoint.com/PortalArabic/SiteAssets/portal/css/Survey.css" />
+<link rel="stylesheet" href="https://shaiju.sharepoint.com/PortalArabic/SiteAssets/portal/css/styles.css" />
+<link rel="stylesheet" href="https://shaiju.sharepoint.com/PortalArabic/SiteAssets/portal/css/video-js.min.css" />
+<link rel="stylesheet" href="https://shaiju.sharepoint.com/PortalArabic/SiteAssets/portal/css/daterangepicker.css" />
+
+
+<body ng-app="myApp"  >
+
+<!-- QuickLinks Panel -->
+<div ng-controller="QuickLinksPanel">
+    <div class="quickLinks menu-icons hide-on-small-only s4-notdlg">
+        <ul>
+            <li>
+                <a class="tooltipped icon icon-home" data-position="left" data-delay="100" data-tooltip="{{QuickLinks.Home}}" href="#/!">
+                </a>
+            </li>
+            <li>
+                <a target="_self" data-activates="phoneBookPanels" class="tooltipped icon icon-phonebook sidebar-collapse-right" data-position="left"
+                    data-delay="100" data-tooltip="{{QuickLinks.PhoneBook}}" onclick="showgeneralcontacts()">
+                </a>
+            </li>
+            <li>
+                <a href="/" data-activates="toDoPanel" class="tooltipped icon icon-Todo todoPanelRight" data-position="left" data-delay="100"
+                    data-tooltip="{{QuickLinks.ToDo}}" onclick="showMyToDos()">
+                </a>
+            </li>
+            <li ng-repeat="x in myQuickLinks" on-finish-render-MOPADir="ToolTipsRendered">
+                <a ng-href="{{x.AppUrl}}" class="tooltipped icon icon-{{x.class}} {{x.activeClass}}" data-position="left" data-delay="100"
+                    data-tooltip="{{x.Title}}">
+                </a>
+            </li>
+            <li>
+                <div ng-hide="myQuickLinks.length === 3" ng-click="openFavPanel()">
+                    <a href="#AddToFavPanel" class="tooltipped icon icon-add modal-trigger" data-position="left" data-delay="100" data-tooltip="{{QuickLinksFavPanel.Add}}">
+                    </a>
+                </div>
+                <div ng-hide="myQuickLinks.length !== 3" ng-click="openFavPanel()">
+                    <a href="#AddToFavPanel" class="tooltipped modal-trigger icon icon-dotsHorizontal" data-position="left" data-tooltip="{{QuickLinksFavPanel.Edit}}">
+                    </a>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <!-- Add To Fav Panel -->
+    <div id="AddToFavPanel" class="modal modal-fixed-footer menu-icons s4-notdlg menu">
+        <div class="modal-header icons">
+            <h1>{{QuickLinksFavPanel.Header}}
+            </h1>
+            <a href="#" class="modal-close icon icon-modal-close tooltipped" data-position="bottom" data-delay="100" data-tooltip="{{QuickLinksFavPanel.Close}}">
+            </a>
+        </div>
+        <div class="modal-content">
+            <div class="row">
+                <!--All links -->
+                <div class="col s12 m6">
+                    <ul class="addLinks">
+                        <li ng-repeat="x in QuickLinkData ">
+                            <div ng-show="!x.Default &amp;&amp; !x.InMyLinks" class="col s12 m4">
+                                <div ng-click="AddToFav(x,$index)" class="pointer">
+                                    <span class="icon icon-{{x.class}}">
+                                    </span>
+                                    <div>{{x.Title}}
+                                    </div>
+                                    <span class="icon icon-quickAdd">
+                                    </span>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="divider">
+                </div>
+                <!-- favourite links -->
+                <div class="col s12 m6">
+                    <ul>
+                        <li ng-repeat="x in DefaultQuickLinkData ">
+                            <div class="col s12 m4">
+                                <div class="icon icon-{{x.class}}">
+                                </div>
+                                <div>{{x.Title}}
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="addLinks">
+                        <li ng-repeat="x in QuickLinkData">
+                            <div ng-show="!x.Default &amp;&amp; x.InMyLinks" class="col s12 m4">
+                                <div ng-click="RemoveFromFav(x,$index)" class="pointer">
+                                    <div class="icon icon-{{x.class}}">
+                                    </div>
+                                    <div>{{x.Title}}
+                                    </div>
+                                    <span class="icon icon-quickRemove">
+                                    </span>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <br />
+        </div>
+        <div class="modal-footer">
+            <input type="button" class="btn modal-close" ng-click="UpdateFavLinksToList()" value="{{QuickLinksFavPanel.Save}}" />
+            <span id="quiclLinkErrorMessage" ng-show="quiclLinkErrorMessage" class="error">{{QuickLinksFavPanel.ErrorMessage}}
+            </span>
+        </div>
+    </div>
+</div>
+<!-- end of QuickLinks Panel -->
+
+<!-- PhoneBook Panel -->
+<div id="pho" class="side-nav icons  s4-notdlg">
+	<div ng-controller="phonebooksearch" id="phonebooksearch">
+        <!--<div ng-include="'/_catalogs/masterpage/GSMOPA/HTML/PhoneBook.html'"></div>-->
+        <div id="phoneBookPanel">
+            <h1>{{PhoneBook.Heading}}
+            </h1>
+           
+            <a class="close-sidebar tooltipped" onclick="sideNavClose(); return false;" data-position="bottom" data-delay="100" data-tooltip="إغلاق">
+                <span class="icon icon-close">
+                </span>
+            </a>
+            <div class="row">
+                <div>
+                    <input id="txtSearchBox" type="text" class="validate closeClear" ng-model="searchText" autocomplete="off" onkeypress="showgeneralcontacts('search')" />
+                </div>
+            </div>
+            <div class="contentOverflow mCustomScrollbar mCS-autoHide" data-mcs-theme="minimal-dark">
+                <div id="DynamicContacts" ng-show="searchText">
+                    <div class="row valign-wrapper custom-collection contactList" ng-repeat="x in phonebookdata | filter:{Searchkey:searchText} ">
+                        <div class="col s2">
+                            <span class="circle ">
+                                <img ng-src="{{x.PictureURL}}" alt="" class="responsive-img" />
+                            </span>
+                            <!-- notice the "circle" class -->
+                        </div>
+                        <div class="col s10">
+                            <h6 ng-click="viewuser(x)">
+                                <a href="#" class="waves-effect waves-block openContactPanel">  {{x.PreferredName}}  
+                                </a>
+                            </h6>
+                            <div class="info-text">  {{PhoneBook.Extn}}   
+                                <span class="englabel"> {{x.WorkPhone}} 
+                                </span>
+                            </div>
+                            <div class="info-text">  {{PhoneBook.ID}}:   
+                                <span class="englabel"> {{x.AccountName.split('\\')[1]}}   
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="generalcontacts" ng-show="!searchText">
+                    <h4>{{PhoneBook.GeneralContacts}}  
+                    </h4>
+                    <div class="row" ng-repeat="x in GeneralContactsData">
+                        <div class="row valign-wrapper custom-collection" style="border">
+                            <div class="col s2">
+                                <span class="circle">
+                                    <span class="icon icon-contact">
+                                    </span>
+                                </span>
+                                <!-- notice the "circle" class -->
+                            </div>
+                            <div class="col s9">
+                                <span>
+                                    <h6>{{x.Title}} 
+                                    </h6>
+                                    <div class="info-text">{{PhoneBook.Extn}} :   
+                                        <span class="englabel">{{x.Extn}} 
+                                        </span>
+                                    </div>
+                                    <div class="info-text"> {{PhoneBook.Mobile}} :   
+                                        <span class="englabel"> {{x.Mobile}}   
+                                        </span>
+                                    </div>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="contactPanel" class="secondaryPanel icons">
+            <div ng-show="accountObj">
+                <h3>   {{PhoneBook.ID}}: 
+                    <span class="englabel">   {{accountObj.AccountName.split('\\')[1]}}  
+                    </span>
+                </h3>
+                <a class="close closeSecondaryPanel" onclick="sideNavCloseChild(); return false;">
+                    <span class="icon icon-back">
+                    </span>
+                </a>
+                <div class="row valign-wrapper custom-collection">
+                    <div class="col s2">
+                        <span class="circle">
+                            <img ng-src="{{accountObj.PictureURL}}" alt="" class="responsive-img" />
+                        </span>
+                        <!-- notice the "circle" class -->
+                    </div>
+                    <div class="col s10">
+                        <h6>{{accountObj.PreferredName}} 
+                        </h6>
+                        <div class="info-text">{{accountObj.Title}}  
+                        </div>
+                    </div>
+                </div>
+                <div class="divider">
+                </div>
+                <div class="row valign-wrapper custom-collection">
+                    <div class="col s12">
+                        <label> {{PhoneBook.Mobile}}  
+                        </label>
+                        <div>
+                            <span class="englabel">  {{accountObj.Mobilephone}}  
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row valign-wrapper custom-collection">
+                    <div class="col s12">
+                        <label> {{PhoneBook.ContactNumber}}  
+                        </label>
+                        <div class="info-text">
+                            <span class="englabel"> {{accountObj.WorkPhone}}  
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End of PhoneBook Panel -->
+
+<div ng-controller="homePageCtrl"   ng-init="HomePageInit()" > <!--ng-init="HomePageInit()"-->
+	<div ng-view></div>
+</div>
+
+
+<script src="https://shaiju.sharepoint.com/PortalArabic/SiteAssets/portal/js/custom/app.js" type="text/javascript"></script>
+<script src="https://shaiju.sharepoint.com/PortalArabic/SiteAssets/portal/js/custom/variation.js" type="text/javascript"></script>
+<script src="https://shaiju.sharepoint.com/PortalArabic/SiteAssets/portal/js/custom/SPData.js" type="text/javascript"></script>
+<script src="https://shaiju.sharepoint.com/PortalArabic/SiteAssets/portal/js/custom/variation.js" type="text/javascript"></script>
+<script src="https://shaiju.sharepoint.com/PortalArabic/SiteAssets/portal/js/custom/UserProfile.js" type="text/javascript"></script>
+
+<script src="https://shaiju.sharepoint.com/PortalArabic/SiteAssets/portal/js/custom/CustromFilter.js" type="text/javascript"></script>
+<script src="https://shaiju.sharepoint.com/PortalArabic/SiteAssets/portal/js/custom/CustomDirective.js" type="text/javascript"></script>
+
+<script src="https://shaiju.sharepoint.com/PortalArabic/SiteAssets/portal/js/custom/Initcomponents%20.js" type="text/javascript"></script>
+
+<script src="https://shaiju.sharepoint.com/PortalArabic/SiteAssets/portal/js/custom/commonFunctions.js" type="text/javascript"></script>
+
+<script src="https://shaiju.sharepoint.com/PortalArabic/SiteAssets/portal/js/custom/HomePage.js" type="text/javascript"></script>
+<!--script src="https://shaiju.sharepoint.com/PortalArabic/portal/js/custom/ToDoFunctions.js" type="text/javascript"></script-->
+<script src="https://shaiju.sharepoint.com/PortalArabic/SiteAssets/portal/js/custom/AnnouncmentListingCtrl.js" type="text/javascript"></script>
+<script src="https://shaiju.sharepoint.com/PortalArabic/SiteAssets/portal/js/custom/QuickLinks.js" type="text/javascript"></script>
+<script src="https://shaiju.sharepoint.com/PortalArabic/SiteAssets/portal/js/custom/phonebook.js" type="text/javascript"></script>
+
+<!--
+<script src="https://shaiju.sharepoint.com/PortalArabic/portal/js/custom/phonebook.js" type="text/javascript"></script>
+<script src="aaa" type="text/javascript"></script>
+<script src="aaa" type="text/javascript"></script>
+<script src="aaa" type="text/javascript"></script>
+-->
+

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.6 (67491) - http://www.bohemiancoding.com/sketch -->
+    <title>Group</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group">
+            <rect id="Rectangle" fill="#344D62" fill-rule="nonzero" x="0" y="0" width="24" height="24" rx="2"></rect>
+            <path d="M15.7136842,13.6168421 C15.4105263,13.3136842 14.9305263,13.3136842 14.6273684,13.5915789 L13.6421053,14.5515789 C13.5157895,14.6778947 13.2884211,14.6526316 13.1873684,14.5010526 L10.4589474,10.0042105 C10.1557895,9.52421053 9.47368421,9.52421053 9.17052632,9.97894737 L5.02736842,16.3957895 C4.69894737,16.9010526 5.05263158,17.5831579 5.65894737,17.5831579 L17.7094737,17.5831579 C18.3915789,17.5831579 18.72,16.7747368 18.2652632,16.2947368 L15.7136842,13.6168421 Z" id="Path" fill="#FFFFFF"></path>
+            <circle id="Oval" fill="#FFFFFF" cx="15.7136842" cy="9.17052632" r="1.94526316"></circle>
+        </g>
+    </g>
+</svg>

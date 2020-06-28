@@ -1,0 +1,3 @@
+phonebook.js
+var listURL = window.location.origin + "/ar-ae" + 
+	            "/_vti_bin/client.svc/web/lists/getByTitle('General Contacts')/Items?&$select=*";

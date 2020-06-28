@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="48px" height="48px" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.3 (67297) - http://www.bohemiancoding.com/sketch -->
+    <title>approve 2</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="approve-2">
+            <g id="approve">
+                <g id="Group">
+                    <g>
+                        <g>
+                            <polygon id="Path" fill="#66C93B" points="20.987234 28.4425532 16.0340426 23.4893617 14.4 25.1234043 20.987234 31.7106383 35.0297872 17.6170213 33.3957447 15.9829787"></polygon>
+                            <path d="M24,0 C10.7744681,0 0,10.7744681 0,24 C0,37.2255319 10.7744681,48 24,48 C37.2255319,48 48,37.1744681 48,24 C48,10.8255319 37.1744681,0 24,0 Z M24.1531915,45.2425532 C12.4595745,45.2425532 2.85957447,35.693617 2.85957447,24 C2.85957447,12.306383 12.4595745,2.70638298 24.1531915,2.70638298 C35.8468085,2.70638298 45.4468085,12.2553191 45.4468085,24 C45.4468085,35.7446809 35.8468085,45.2425532 24.1531915,45.2425532 Z" id="Shape" fill="#6C7277" fill-rule="nonzero"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

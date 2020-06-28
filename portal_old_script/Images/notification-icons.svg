@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="195px" viewBox="0 0 24 195" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.4 (67378) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 3</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-3">
+            <g id="Group-2" transform="translate(0.000000, 57.000000)">
+                <path d="M12,0 C18.587234,0 24,5.41276596 24,12 C24,18.587234 18.612766,24 12,24 C5.38723404,24 0,18.612766 0,12 C0,5.38723404 5.38723404,0 12,0 Z" id="Combined-Shape" fill="#079F40" fill-rule="nonzero"></path>
+                <polygon id="Path" fill="#FFFFFF" points="10.493617 14.2212766 8.01702128 11.7446809 7.2 12.5617021 10.493617 15.8553191 17.5148936 8.80851064 16.6978723 7.99148936"></polygon>
+            </g>
+            <g id="Group-4" transform="translate(12.000000, 126.000000) scale(1, -1) translate(-12.000000, -126.000000) translate(0.000000, 114.000000)">
+                <circle id="Oval" fill="#EF781A" fill-rule="nonzero" cx="12" cy="12" r="11.2340426"></circle>
+                <g id="noun_Information_20771">
+                    <path d="M12,1.2 C17.95512,1.2 22.8,6.04488 22.8,12 C22.8,17.95512 17.95512,22.8 12,22.8 C6.04488,22.8 1.2,17.95512 1.2,12 C1.2,6.04488 6.04488,1.2 12,1.2 Z M12,0 C5.37264,0 0,5.37264 0,12 C0,18.62736 5.37264,24 12,24 C18.62736,24 24,18.62736 24,12 C24,5.37264 18.62736,0 12,0 Z" id="Shape" fill="#EF781A" fill-rule="nonzero"></path>
+                    <circle id="Oval" fill="#FFFFFF" cx="12" cy="7.09104" r="1.18416"></circle>
+                    <rect id="Rectangle" fill="#FFFFFF" x="11.16" y="9.8904" width="1.68" height="8.20296"></rect>
+                </g>
+            </g>
+            <g id="Group-5" transform="translate(0.000000, 171.000000)">
+                <circle id="Oval" fill="#C42033" fill-rule="nonzero" cx="12.1276596" cy="12.1276596" r="11.106383"></circle>
+                <g id="noun_Error_1102749">
+                    <path d="M12,24 C5.3835,24 0,18.6165 0,12 C0,5.3835 5.3835,0 12,0 C18.6165,0 24,5.3835 24,12 C24,18.6165 18.6165,24 12,24 Z M12,1.4115 C6.1605,1.4115 1.4115,6.1605 1.4115,12 C1.4115,17.8395 6.1605,22.5885 12,22.5885 C17.8395,22.5885 22.5885,17.8395 22.5885,12 C22.5885,6.1605 17.8395,1.4115 12,1.4115 Z" id="Shape" fill="#C42033" fill-rule="nonzero"></path>
+                    <path d="M15.9555,14.907 C16.248,15.1995 16.248,15.675 15.954,15.9675 C15.6615,16.26 15.186,16.2585 14.8935,15.966 L8.0445,9.093 C7.752,8.799 7.752,8.325 8.046,8.031 C8.34,7.74 8.814,7.74 9.1065,8.034 L15.9555,14.907 Z" id="Path" fill="#FFFFFF"></path>
+                    <path d="M8.0445,14.907 C7.752,15.1995 7.752,15.675 8.046,15.9675 C8.3385,16.26 8.814,16.2585 9.1065,15.966 L15.954,9.0915 C16.2465,8.7975 16.2465,8.3235 15.9525,8.0295 C15.6585,7.74 15.186,7.74 14.8935,8.034 L8.0445,14.907 Z" id="Path" fill="#FFFFFF"></path>
+                </g>
+            </g>
+            <g id="Group-4">
+                <circle id="Oval" fill="#2B7ABF" fill-rule="nonzero" cx="12" cy="12" r="11.2340426"></circle>
+                <g id="noun_Information_20771">
+                    <path d="M12,1.2 C17.95512,1.2 22.8,6.04488 22.8,12 C22.8,17.95512 17.95512,22.8 12,22.8 C6.04488,22.8 1.2,17.95512 1.2,12 C1.2,6.04488 6.04488,1.2 12,1.2 Z M12,0 C5.37264,0 0,5.37264 0,12 C0,18.62736 5.37264,24 12,24 C18.62736,24 24,18.62736 24,12 C24,5.37264 18.62736,0 12,0 Z" id="Shape" fill="#2B7ABF" fill-rule="nonzero"></path>
+                    <circle id="Oval" fill="#FFFFFF" cx="12" cy="7.09104" r="1.18416"></circle>
+                    <rect id="Rectangle" fill="#FFFFFF" x="11.16" y="9.8904" width="1.68" height="8.20296"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

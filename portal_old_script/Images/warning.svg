@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="25px" viewBox="0 0 24 25" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.6 (67491) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 6</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Icon,-Color-and-Spacing" transform="translate(-499.000000, -1030.000000)">
+            <g id="Group-6" transform="translate(499.000000, 1030.000000)">
+                <g id="Group-4" transform="translate(12.000000, 12.280273) scale(1, -1) translate(-12.000000, -12.280273) translate(0.000000, 0.280273)">
+                    <circle id="Oval" fill="#EF781A" fill-rule="nonzero" cx="12" cy="12" r="11.2340426"></circle>
+                    <g id="noun_Information_20771">
+                        <path d="M12,1.2 C17.95512,1.2 22.8,6.04488 22.8,12 C22.8,17.95512 17.95512,22.8 12,22.8 C6.04488,22.8 1.2,17.95512 1.2,12 C1.2,6.04488 6.04488,1.2 12,1.2 Z M12,0 C5.37264,0 0,5.37264 0,12 C0,18.62736 5.37264,24 12,24 C18.62736,24 24,18.62736 24,12 C24,5.37264 18.62736,0 12,0 Z" id="Shape" fill="#EF781A" fill-rule="nonzero"></path>
+                        <circle id="Oval" fill="#FFFFFF" cx="12" cy="7.09104" r="1.18416"></circle>
+                        <rect id="Rectangle" fill="#FFFFFF" x="11.16" y="9.8904" width="1.68" height="8.20296"></rect>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

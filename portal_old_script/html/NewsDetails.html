@@ -1,0 +1,81 @@
+﻿<section class="container" ng-controller="NewsDetailsCtrl" ng-init="NewsDetailsCtrlInit()" >
+		<div class="breadcrumbWrapper">
+              <a href="{{GeneralSettings.SubSiteUrl}}" class="breadcrumb">{{NewsPanel.Home}}</a>
+               <a href="{{GeneralSettings.SubSiteUrl}}/Pages/newsListing.aspx" class="breadcrumb">{{NewsPanel.News}}</a>
+                 <span class="breadcrumb">{{NewsPanel.Details}}</span>    
+         </div>
+    <h1>{{NewsPanel.News}}</h1>
+    <div class="divider"></div>
+ <!-- News -->
+        <div class="detailView" >
+            <div class="card">
+                <div class="card-content">
+                    <div class="row">
+                        <div ng-repeat="newsData in newsEntry " class="col s12">                        	
+                            <h3>{{newsData.ArticleByLine}} </h3>
+                            <p>
+                            	<span class="badgeTag {{newsData.Department}}"><span></span>{{newsData.Department}}</span>&nbsp;| 
+                            	<span class="date">{{newsData.ArticleStartDate | date: 'dd/MM/yyyy'}} </span>                                
+							</p>
+                            <div class="center-align"><img ng-src="{{newsData.PublishingPageImage}}" /></div>
+                            
+                            <p ng-bind-html=" newsData.PublishingPageContent | html "></p>
+                            
+                        </div>
+                    </div>   
+                <div class="row" ng-hide="preview">
+					<h5 class="col s12">{{NewsPanel.More}}</h5>  
+                    <div class="col s12 m3" ng-repeat="newsData in newsPool| orderBy:['-ArticleStartDate ','-ID']  | limitTo:4 ">
+                       
+                            <div>                            
+                                <a href="{{GeneralSettings.SubSiteUrl}}/Pages/newsDetails.aspx?newsId={{newsData.ID}}"  class="image">
+                                	<div style="background: url({{newsData.PublishingPageImage}});"></div>
+                                </a>
+                            </div>
+                           
+                            <div>
+                              <a href="{{GeneralSettings.SubSiteUrl}}/Pages/newsDetails.aspx?newsId={{newsData.ID}}">
+                                <span class="card-title dtailed">{{newsData.ArticleByLine  | limitTo:97 }}{{newsData.ArticleByLine.length > 97 ? '...' : ''}}</span>
+                               </a>
+                                <span class="badgeTag {{newsData.Department}}"><span></span>{{newsData.Department}}</span>&nbsp;| 
+                                <span class="date">{{newsData.ArticleStartDate | date:"dd/MM/yyyy"}}</span> 
+                                
+                            </div>
+                        
+                    </div>
+
+                </div>
+				<div class="row" ng-hide="preview"><div class="col s12"><a href="{{GeneralSettings.SubSiteUrl}}/Pages/newsListing.aspx" class="btn waves-effect left"> {{NewsPanel.ViewAll}}</a></div></div>
+            </div>
+        </div>
+         </div>
+<style type="text/css">
+.ms-breadcrumb-box, .ms-cui-ribbonTopBars, #s4-ribbonrow, #sideNavBox{
+	display: none;
+}
+#s4-titlerow{
+	height: 0;
+	padding: 0;
+}
+
+div.article, div.welcome{
+	padding: 0;
+}
+</style>
+
+
+<script type="text/javascript">
+   
+    
+	
+</script>
+</section><html xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"><head>
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:_dlc_DocId msdt:dt="string">AUVUK7J5Z7FY-2140384586-8</mso:_dlc_DocId>
+<mso:_dlc_DocIdItemGuid msdt:dt="string">1d983af2-6cee-4302-8718-1398a3da151c</mso:_dlc_DocIdItemGuid>
+<mso:_dlc_DocIdUrl msdt:dt="string">http://itdev-spsapp:31648/ar-ae/_layouts/15/DocIdRedir.aspx?ID=AUVUK7J5Z7FY-2140384586-8, AUVUK7J5Z7FY-2140384586-8</mso:_dlc_DocIdUrl>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+
+<script src="/_catalogs/masterpage/GSMOPA/portal/JS/NewsCtrl.js" type="text/javascript"></script>

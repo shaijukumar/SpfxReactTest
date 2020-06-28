@@ -1,0 +1,164 @@
+﻿<section class="container">
+	<h1>Manage Survey</h1>
+	<div class="divider"></div>
+
+	<div class="card filters">
+		<div class="card-content"><div class="row">
+			<div class="col s10">
+				<a target="_blank" href="/ar-ae/_layouts/15/new.aspx?CustomTemplate=Arabic (U.A.E.)-Custom Survey Template.stp&FeatureId={00bfea71-eb8a-40b1-80c7-506be7590102}&ListTemplate=102">Create new Survey</a>
+			</div>
+			<div class="col s2">
+				<a href="#" ng-click="SurveyAdminInit()" class="btn tertiary-btn" >Refresh</a>
+			</div>
+		</div>
+	</div>
+</div>
+		<div ng-controller="SurveyAdminCtrl" ng-init="SurveyAdminInit()">
+		<div class="card">
+	<div class="card-content">
+			
+			<table border="0" class="display" width="100%">
+				<tr >
+					<th style="width:5%">S.no</th>
+					<th style="width:15%">Edit</th>
+					<th style="width:10%">Preview</th>
+					<th style="width:30%">Title</th>
+					<th style="width:10%">Created On</th>
+					<th style="width:10%">				
+						<select ng-model="SearchStatus ">
+							<option value="" selected="selected">Status</option>
+							<option value="Approved">Active</option>
+							<option value="Draft">Offline</option>					
+						</select>
+					</th>	
+					<th style="width:10%">Action</th>		
+				</tr>
+		
+				<tr ng-repeat="s in Surveys | filter:{ Status : SearchStatus}" >
+					<td>{{$index + 1}}</td>
+					<td>
+						<a target="_blank" href="/ar-ae/_layouts/15/survedit.aspx?List={{s.Id}}">Survey Settings</a>
+					</td>
+					<td>
+						<a target="_blank" href="/ar-ae/Pages/SurveyDetails.aspx?survId={{s.Id}}">Preview</a>
+					</td>
+		
+					<td  style="width:500px">{{s.Title}}</td>
+					<td>{{s.Created | date : "dd/MM/yyyy"}}</td>
+					<td>{{s.Status == "Draft" ? "Offline" : ""}}{{s.Status == "Approved" ? "Active" : ""}}</td>
+					<td>
+						<input class="{{s.Status == 'Approved' ? 'btn tertiary-btn' : 'btn btn-primary'  }} " type="button" ng-click="UpdateSurveyList(s)" value="{{s.Status == 'Approved' ? 'Make offline' : 'Make Active'  }} ">
+					</td>
+				</tr>
+			</table>
+		</div>
+		</div>
+</div>
+</section>
+<style type="text/css">
+.ms-breadcrumb-box, .ms-cui-ribbonTopBars, #s4-ribbonrow, #sideNavBox{
+	display: none;
+}
+#s4-titlerow{
+	height: 0;
+	padding: 0;
+}
+
+div.article, div.welcome{
+	padding: 0;
+}
+</style>
+
+<script type="text/javascript">
+app.controller('SurveyAdminCtrl', function ($scope, $q) {
+		
+	$scope.SurveyAdminInit= function(){
+		$scope.Surveys = GetSurvey();
+		//debugger;
+	}
+	
+	$scope.UpdateSurveyList = function(s){
+	debugger;
+		var Status = "Approved"
+		if(s.Status == 'Approved'){
+			Status = 'Draft';
+		}
+		
+		
+		
+		var SurveyListItem = {
+            "__metadata": { "type": "SP.Data.SurveyListListItem" },
+            "Title": s.Title,
+            "SurveyDescription": s.Description,
+            "Status": Status,
+            "ListGUID": s.Id            
+        };
+
+
+		AddUpdateListItem('SurveyList', SurveyListItem, s.listID? s.listID : null).then(function (data) {
+            s.Status = Status;
+        });	
+	}
+
+});
+
+
+function GetSurvey(){
+debugger;
+	var restURL = _spPageContextInfo.webAbsoluteUrl + "/_api/web/lists/getByTitle('SurveyList')/items?"
+					+ "$Select=ID,ListGUID,Status";
+					
+	var SurveyList = [];
+	
+	$.ajax({
+        url: restURL,
+        type: "GET",
+        async: false,
+        headers: { "accept": "application/json;odata=verbose" },
+        success: function (data) {
+            SurveyList = data.d.results;
+        },
+        error: function (request, status, error) { 
+        	alert("Error while SurveyList" + error ); 
+        }
+    });
+    
+	
+	
+	restURL = _spPageContextInfo.webAbsoluteUrl + "/_api/web/lists?$select=Title,ID,Description,Created&$filter=BaseTemplate eq 102&$orderby=Created desc";
+	var Survey = [];
+	
+	$.ajax({
+        url: restURL,
+        type: "GET",
+        async: false,
+        headers: { "accept": "application/json;odata=verbose" },
+        success: function (data) {
+            Survey = data.d.results;
+            
+            $.each(Survey, function(index, s){               
+            	for(i=0;i<SurveyList.length;i++){            		
+            		var sl = SurveyList[i];            		
+            		if(s.Id == sl.ListGUID){
+						s.Status = sl.Status;
+						s.listID = sl.ID;
+						break;						
+					}					
+            	} 
+            	
+            	if(s.Status != "Approved"){
+        			s.Status = "Draft"
+        		}           					
+			});
+				
+
+        },
+        error: function (request, status, error) { 
+        	alert("Error while surveys: " + error ); 
+        }
+    });
+    return Survey;
+}
+
+
+</script>

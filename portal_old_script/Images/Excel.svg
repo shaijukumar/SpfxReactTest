@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
+  <defs>
+    <rect id="excel-a" width="32" height="32" rx="2"/>
+  </defs>
+  <g fill="none" fill-rule="evenodd">
+    <use fill="#428862" xlink:href="#excel-a"/>
+    <g fill="#FFF" fill-rule="nonzero" transform="translate(5 3)">
+      <rect width="5.28" height="16.72" x="16.72" y="4.4"/>
+      <path d="M0,20.9456543 L15.6394219,25.1347852 L15.6394219,0 L0,4.18913086 L0,20.9456543 Z M3.90985547,6.98188477 L6.39540645,6.98188477 L7.7917834,10.0818416 L9.24401543,6.98188477 L11.6737113,6.98188477 L9.13230527,11.4223635 L11.9250592,16.6448133 L9.4395082,16.6448133 L7.7917834,12.9583781 L6.17198613,16.6448133 L3.74229023,16.6448133 L6.45126152,11.5061461 L3.90985547,6.98188477 Z"/>
+    </g>
+  </g>
+</svg>
