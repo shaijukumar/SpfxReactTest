@@ -2915,7 +2915,7 @@ html:lang(ar-AE) .detailView p, html:lang(ar-AE) .detailView a, html:lang(ar-AE)
 	margin: 0 !important;
 	padding-left: 10px;
 	width: 0;
-}
+} 
 .breadcrumbWrapper a.breadcrumb {
   color: #039be5;
   font-size: 0.8rem;

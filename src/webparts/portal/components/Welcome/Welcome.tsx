@@ -17,14 +17,15 @@ const Welcome: React.FC<IListItemsProps> = (props) => {
 
   useEffect(() => {
     if (homeStore.variations && homeStore.currentUser) {
-      homeStore.variations.then((v) => {
-        debugger;
+      const v = homeStore.variations;
+      try {
         let q = "";
         moment().format("a") == "pm"
           ? (q = "Welcome-PMMessage")
           : (q = "Welcome-AMMessage");
         setMsg(`${v[q]} ${homeStore.currentUser.DisplayName}`);
-      });
+        setTodayWeek(v["Welcome-WeekDays"].split(",")[moment().weekday()]);
+      } catch (err) {}
     }
   }, [homeStore.currentUser, homeStore.variations]);
 

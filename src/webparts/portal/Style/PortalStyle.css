@@ -33,3 +33,112 @@ section .welcomeWrapper .row {
 .redText {
   color: #c42033;
 }
+
+/*********************  announcements ******************/
+
+.announcementImage {
+  width: 350px;
+  height: 350px;
+}
+
+.announcements {
+  height: 150px !important;
+  overflow: hidden;
+}
+.announcements.slider .slides {
+  height: inherit !important;
+  overflow: hidden;
+}
+.announcements.slider .slides div img {
+  background-size: contain;
+}
+.announcements.slider .slides div .caption {
+  top: 27%;
+  width: inherit;
+  padding-left: 20px;
+}
+.announcements.card .card-content {
+  padding: 10px 0;
+}
+.announcements.card .card-content .card-title {
+  margin: 0;
+}
+.announcements.card p.date {
+  padding: 0;
+  color: #000;
+}
+
+.announcements h2 {
+  /*margin: 0;*/
+  width: 100%;
+  /* overflow: hidden;*/
+  font-weight: 400 !important;
+  /* font-size: 1.4rem;
+    line-height: 1.4;*/
+}
+.announcements h2 a {
+  max-height: 75px;
+  display: block;
+}
+
+.announcements a {
+  color: #000;
+}
+
+/********************* end announcements ******************/
+
+/********************* Slider ******************/
+
+.slider {
+  height: inherit;
+}
+.slider .slides {
+  background-color: transparent;
+  padding: 0;
+}
+.slider .slides li {
+  height: 100%;
+}
+.slider .slides li img {
+  background-position: top;
+  background-repeat: no-repeat;
+}
+.slider .slides li .caption {
+  left: auto;
+  color: black;
+  text-align: justify;
+}
+.slider .slides li .caption p {
+  color: inherit;
+}
+.slider a:hover {
+  text-decoration: underline;
+}
+.slider h2 {
+  font-size: 24px;
+  margin: 0;
+  font-weight: 400 !important;
+}
+.slider .indicators {
+  z-index: 2;
+  left: auto;
+  padding: 0;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 2px;
+  padding: 0 5px;
+  margin-bottom: 20px;
+  margin-right: 20px;
+}
+.slider .indicators .indicator-item {
+  border: 1px solid #152938;
+  background-color: rgba(255, 255, 255, 0.5);
+  height: 10px;
+  width: 10px;
+  margin: 7px 4px 0px;
+}
+.slider .indicators .indicator-item.active {
+  background-color: #c99e3c;
+  border: 1px solid #c99e3c;
+}
+
+/********************* End of Slider ******************/

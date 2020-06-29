@@ -18,9 +18,43 @@ export const SPService = (spContext: WebPartContext, siteUrl: string) => {
     return profile;
   };
 
-  const getAllListItems = async (ListName) => {
+  const getistItems = async (ListName, count) => {
     try {
-      const items: any[] = await siteWeb.lists.getByTitle(ListName).items.get();
+      let items: any[] = [];
+      if (count > 0) {
+        items = await siteWeb.lists
+          .getByTitle(ListName)
+          .items.select(
+            "ID",
+            "Title",
+            "PageContent",
+            "Department",
+            "PageContent",
+            "ArticleDate",
+            "Category"
+          )
+          .expand("AttachmentFiles")
+          .orderBy("ArticleDate")
+          .top(count)
+          .get();
+      } else {
+        items = await siteWeb.lists.getByTitle(ListName).items.get();
+      }
+      //debugger;
+
+      return items;
+    } catch (error) {
+      console.log(error);
+      return [];
+    }
+  };
+
+  const getAllListItems = async (ListName) => {
+    //web.lists.getByTitle("My List").items.select("Title", "Description").top(5).orderBy("Modified", true).get();
+    try {
+      let items: any[] = [];
+      items = await siteWeb.lists.getByTitle(ListName).items.get();
+
       return items;
     } catch (error) {
       console.log(error);
@@ -87,6 +121,7 @@ export const SPService = (spContext: WebPartContext, siteUrl: string) => {
   };
 
   return {
+    getistItems,
     getAllListItems,
     updateListItem,
     createListItem,

@@ -8,8 +8,9 @@ export default class PortalBaseStore {
   listName: string;
   setLoading: any;
   setSubmitting: any;
-  rootItems: any[] = [];
-  rootItem: any;
+  items: any[] = [];
+  homePageItems: any[] = [];
+  item: any;
 
   constructor(spContext: WebPartContext, listName: string) {
     //debugger;
@@ -18,23 +19,38 @@ export default class PortalBaseStore {
     this.spService = SPService(this.spContext, this.siteUrl);
   }
 
+  rootGetHomeItems = async (count?: number) => {
+    this.homePageItems = await this.spService.getistItems(this.listName, count);
+    return this.homePageItems;
+  };
+
+  rootGetItems = async (count?: number) => {
+    if (count > 0) {
+      this.items = await this.spService.getAllListItems(this.listName);
+    } else {
+      this.items = await this.spService.getAllListItems(this.listName);
+    }
+
+    return this.items;
+  };
+
   rootGetAllItems = async () => {
-    this.rootItems = await this.spService.getAllListItems(this.listName);
+    this.items = await this.spService.getAllListItems(this.listName);
     await this.Sleep();
-    return this.rootItems;
+    return this.items;
   };
 
   rootGetItemById = async (id: string) => {
     //debugger;
-    this.rootItem = await this.spService.getItemById(this.listName, id);
+    this.items = await this.spService.getItemById(this.listName, id);
     await this.Sleep();
-    return this.rootItem;
+    return this.items;
   };
 
   rootcreateListItem = async (data: any) => {
-    this.rootItems = await this.spService.createListItem(this.listName, data);
+    this.items = await this.spService.createListItem(this.listName, data);
     await this.Sleep();
-    return this.rootItems;
+    return this.items;
   };
 
   Sleep() {

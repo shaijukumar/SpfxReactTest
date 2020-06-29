@@ -813,7 +813,7 @@ iframe.webAppsDoc{
   padding: 0;
 }
 .slider .slides li{
-	height: 100%;
+	height: 100%; 
 }
 .slider .slides li img {
   background-position: top;
