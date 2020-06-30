@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com -->
+    <title>Group 26</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Branch-Chart-Maximize-Mode" transform="translate(-1389.000000, -136.000000)" fill="#757575" fill-rule="nonzero">
+            <g id="Group-26" transform="translate(1389.000000, 136.000000)">
+                <g id="Group">
+                    <path d="M24,23.0890688 L24,15 L22.1781376,15 L22.1781376,22.1781376 L15,22.1781376 L15,24 L23.0890688,24 C23.5921621,24 24,23.5921621 24,23.0890688 Z" id="Shape" transform="translate(19.500000, 19.500000) rotate(180.000000) translate(-19.500000, -19.500000) "></path>
+                    <path d="M24,0.910931171 C24,0.407837779 23.5921621,0 23.0890688,0 L15,0 L15,1.82186234 L22.1781376,1.82186234 L22.1781376,9 L24,9 L24,0.910931171 Z" id="Shape" transform="translate(19.500000, 4.500000) rotate(180.000000) translate(-19.500000, -4.500000) "></path>
+                    <path d="M9,0 L0.910931171,0 C0.407837779,0 0,0.407837779 0,0.910931171 L0,9 L1.82186234,9 L1.82186234,1.82186234 L9,1.82186234 L9,0 Z" id="Shape" transform="translate(4.500000, 4.500000) rotate(180.000000) translate(-4.500000, -4.500000) "></path>
+                    <path d="M9,22.1781376 L1.82186234,22.1781376 L1.82186234,15 L0,15 L0,23.0890688 C0,23.5921621 0.407837779,24 0.910931171,24 L9,24 L9,22.1781376 Z" id="Shape" transform="translate(4.500000, 19.500000) rotate(180.000000) translate(-4.500000, -19.500000) "></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

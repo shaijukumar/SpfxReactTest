@@ -21,7 +21,7 @@ export default class HomeStore extends PortalBaseStore {
     //announcementStore
     this.announcements = await announcementStore.rootGetHomeItems(6);
 
-    //debugger;
+    debugger;
     this.setLoading && this.setLoading(false);
   };
 

@@ -14,7 +14,6 @@ export default class AnnouncementStore extends PortalBaseStore {
     // $scope.AnnouncementsData = GetHomeAnnouncements(restURL);
 
     this.homePageItems = await this.spService.getistItems(this.listName, count);
-
     return this.homePageItems;
   };
 }

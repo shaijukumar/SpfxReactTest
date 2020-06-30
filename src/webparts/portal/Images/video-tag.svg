@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>Group 3</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="media-gallery-photos" transform="translate(-1262.000000, -582.000000)">
+            <g id="Group-3" transform="translate(1262.000000, 582.000000)">
+                <rect id="Rectangle" fill-opacity="0.7" fill="#C99E3C" x="0" y="0" width="24" height="24" rx="2"></rect>
+                <path d="M12,19.2 C15.9765746,19.2 19.2,15.9765746 19.2,12 C19.2,8.023616 15.9765746,4.8 12,4.8 C8.02342538,4.8 4.8,8.023616 4.8,12 C4.8,15.9765746 8.02342538,19.2 12,19.2 Z M9.96605862,8.94489423 L15.2581187,12.0001906 L9.96605862,15.055487 L9.96605862,8.94489423 Z" id="Shape" fill-opacity="0.87" fill="#FFFFFF" fill-rule="nonzero"></path>
+            </g>
+        </g>
+    </g>
+</svg>

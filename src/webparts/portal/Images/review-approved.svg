@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="18px" height="18px" viewBox="0 0 18 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com -->
+    <title>Group 40</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Outline-Icons" transform="translate(-958.000000, -1718.000000)">
+            <g id="Group-40" transform="translate(958.000000, 1718.000000)">
+                <g id="Group-47" transform="translate(3.375000, 6.352941)" fill="#079F40" fill-rule="nonzero" stroke="#079F40">
+                    <g id="Group" transform="translate(5.704621, 4.510666) rotate(45.000000) translate(-5.704621, -4.510666) translate(3.659167, 0.179115)">
+                        <path d="M3.31328461,7.95747751 L3.31328461,0.878869483 C3.31328461,0.806557767 3.4111058,0.747937538 3.53177435,0.747937538 C3.6524429,0.747937538 3.75026409,0.806557767 3.75026409,0.878869483 L3.75026409,8.21105837 C3.75026409,8.21665318 3.74967851,8.22216604 3.74854207,8.22757612 C3.74588409,8.3516092 3.72334321,8.4484723 3.69592973,8.4484723 L0.734956789,8.4484723 C0.705754999,8.4484723 0.682082272,8.33855937 0.682082272,8.2029749 C0.682082272,8.06739043 0.705754999,7.95747751 0.734956789,7.95747751 L3.31328461,7.95747751 Z" id="Combined-Shape"></path>
+                    </g>
+                </g>
+                <rect id="Rectangle" stroke="#000000" stroke-width="1.2" x="0.6" y="0.6" width="15.9" height="16.8" rx="2"></rect>
+                <rect id="Rectangle" stroke="#000000" fill="#D8D8D8" x="3.875" y="3.67647059" width="9.125" height="1" rx="0.5"></rect>
+                <rect id="Rectangle" stroke="#000000" fill="#D8D8D8" x="3.875" y="6.85294118" width="3.5" height="1" rx="0.5"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

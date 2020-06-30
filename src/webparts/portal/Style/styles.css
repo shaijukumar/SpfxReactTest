@@ -2923,7 +2923,7 @@ html:lang(ar-AE) .detailView p, html:lang(ar-AE) .detailView a, html:lang(ar-AE)
 }
 .breadcrumbWrapper a.breadcrumb:after {
   color: #000;
-  font-size: 0.9rem;
+  font-size: 0.9rem; 
   content: "\003e";
   padding-right: 10px;
   margin: 0 !important;

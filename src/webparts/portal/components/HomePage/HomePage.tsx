@@ -27,6 +27,11 @@ const HomePage: React.FC<IListItemsProps> = (props) => {
       <Screen loading={load}>
         <Welcome />
         <Announcements />
+
+        <div className="row divre-order">
+          <div className="col s12 m12 l9">News</div>
+          <div className="col s12 l3">CEO message</div>
+        </div>
       </Screen>
     </div>
   );

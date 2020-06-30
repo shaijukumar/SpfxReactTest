@@ -1,3 +1,13 @@
+body {
+  overflow-x: hidden;
+  background: #f5f5f5 url(/_catalogs/masterpage/GSMOPA/images/body-bg.png)
+    repeat-x left 0px !important;
+  font-weight: 300;
+  color: rgba(0, 0, 0, 0.87);
+  font-family: JannaLT-Regular, majalla, openSans, arial;
+  font-size: 14px;
+}
+
 .container {
   width: 96%;
   max-width: 1170px;
@@ -36,58 +46,29 @@ section .welcomeWrapper .row {
 
 /*********************  announcements ******************/
 
-.announcementImage {
-  width: 350px;
-  height: 350px;
-}
-
 .announcements {
-  height: 150px !important;
+  height: 170px !important;
   overflow: hidden;
-}
-.announcements.slider .slides {
-  height: inherit !important;
-  overflow: hidden;
-}
-.announcements.slider .slides div img {
-  background-size: contain;
-}
-.announcements.slider .slides div .caption {
-  top: 27%;
-  width: inherit;
-  padding-left: 20px;
-}
-.announcements.card .card-content {
-  padding: 10px 0;
-}
-.announcements.card .card-content .card-title {
-  margin: 0;
-}
-.announcements.card p.date {
-  padding: 0;
-  color: #000;
 }
 
-.announcements h2 {
-  /*margin: 0;*/
+.announcements .image {
   width: 100%;
-  /* overflow: hidden;*/
-  font-weight: 400 !important;
-  /* font-size: 1.4rem;
-    line-height: 1.4;*/
-}
-.announcements h2 a {
-  max-height: 75px;
-  display: block;
+  height: 100%;
 }
 
-.announcements a {
-  color: #000;
+.icons .icon {
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-image: url("../Images/sprite-icons.svg");
+  height: 33px;
+  width: 32px;
 }
 
-/********************* end announcements ******************/
+.icons .icon.icon-latestAnnouncements {
+  background-position: -573px -2px;
+}
 
-/********************* Slider ******************/
+/* ============================== */
 
 .slider {
   height: inherit;
@@ -107,6 +88,7 @@ section .welcomeWrapper .row {
   left: auto;
   color: black;
   text-align: justify;
+  /*width: calc(100% - 40px);*/
 }
 .slider .slides li .caption p {
   color: inherit;
@@ -141,4 +123,44 @@ section .welcomeWrapper .row {
   border: 1px solid #c99e3c;
 }
 
-/********************* End of Slider ******************/
+.announcements {
+  height: 150px !important;
+  overflow: hidden;
+}
+.announcements.slider .slides {
+  height: inherit !important;
+  overflow: hidden;
+}
+.announcements.slider .slides li img {
+  background-size: contain;
+}
+.announcements.slider .slides li .caption {
+  top: 27%;
+  width: inherit;
+  padding-left: 20px;
+}
+.announcements.card .card-content {
+  padding: 10px 0;
+}
+.announcements.card .card-content .card-title {
+  margin: 0;
+}
+.announcements.card p.date {
+  padding: 0;
+  color: #000;
+}
+
+.announcements h2 {
+  width: 100%;
+  font-weight: 400 !important;
+}
+.announcements h2 a {
+  max-height: 75px;
+  display: block;
+}
+
+.announcements a {
+  color: #000;
+}
+
+/*********************  end of announcements ******************/
