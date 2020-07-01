@@ -19,7 +19,7 @@ export default class HomeStore extends PortalBaseStore {
     this.variations = this.updateVariation(variations);
 
     //announcementStore
-    this.announcements = await announcementStore.rootGetHomeItems(6);
+    this.announcements = await announcementStore.GetHomeItems();
 
     debugger;
     this.setLoading && this.setLoading(false);

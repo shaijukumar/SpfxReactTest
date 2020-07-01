@@ -13,7 +13,8 @@ import {
 import "../../Style/PortalStyle.css";
 import "../../Style/materialize.min.css";
 
-import Welcome from "../Welcome/Welcome";
+import AnnouncementsDeails from "../Announcements/AnnouncementsDeails";
+import AnnouncementList from "../Announcements/AnnouncementList";
 import HomePage from "../HomePage/HomePage";
 
 const PortalNavigation: React.FC<RouteComponentProps> = (location) => {
@@ -30,8 +31,11 @@ const PortalNavigation: React.FC<RouteComponentProps> = (location) => {
         </div>
         <br /> */}
         <Switch>
-          <Route path="/Welcome">
-            <Welcome />
+          <Route path="/Announcement">
+            <AnnouncementsDeails />
+          </Route>
+          <Route path="/Announcements">
+            <AnnouncementList />
           </Route>
 
           {/* <Route

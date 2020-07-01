@@ -1,5 +1,6 @@
 import * as React from "react";
 import { useContext, useState, useEffect } from "react";
+import { Link, useHistory } from "react-router-dom";
 import Slider from "react-slick";
 import * as moment from "moment";
 
@@ -8,11 +9,12 @@ import "slick-carousel/slick/slick-theme.css";
 
 import PortalRootStore from "../PortalRoot/PortalRootStore";
 
-export interface IListItemsProps { }
+export interface IListItemsProps {}
 
 const AnnouncementHome: React.FC<IListItemsProps> = (props) => {
-  const { homeStore } = useContext(PortalRootStore);
+  const { homeStore, announcementStore } = useContext(PortalRootStore);
 
+  let history = useHistory();
   const [todayWeek, setTodayWeek] = useState("Day");
 
   const settings = {
@@ -37,23 +39,29 @@ const AnnouncementHome: React.FC<IListItemsProps> = (props) => {
                 />
               )}
             </div>
+
             <div className="col m8" style={{ height: "100px" }}>
               <span className="icon icon-latestAnnouncements"></span>
               <span>{homeStore.variations["Home-Announcements"]}</span>eee11
               <div className="caption left-align">
                 <h2 className="right-align">
-                  <a href="#!/AnnouncementsDetails/{{x.ID}}">
+                  <a
+                    href="#"
+                    onClick={() => {
+                      announcementStore.SetItem(ann);
+                      history.push(`/Announcement`);
+                    }}
+                  >
                     {ann.Title.length < 120
                       ? ann.Title
                       : ann.Title.substr(0, 120) + "..."}
-                    {/* {{x.ArticleByLine | limitTo:120 }}{{x.ArticleByLine.length> 120 ? '...' : ''}} */}
                   </a>
                 </h2>
                 <p className="right-align">
                   <span className="siteDepartment">
                     <span
                       className="badgeTag"
-                    // ng-class="{'GeneralTag':  (GeneralSettings.DefaultDept === x.Department || !x.Department )}"
+                      // ng-class="{'GeneralTag':  (GeneralSettings.DefaultDept === x.Department || !x.Department )}"
                     >
                       {ann.Department
                         ? ann.Department
@@ -73,10 +81,6 @@ const AnnouncementHome: React.FC<IListItemsProps> = (props) => {
         ))}
       </Slider>
     </div>
-
-    // <div className="card announcements icons slider" id="AnnouncementsCarousel">
-    //   <ul className="slides"></ul>
-    // </div>
   );
 };
 

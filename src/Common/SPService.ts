@@ -18,29 +18,45 @@ export const SPService = (spContext: WebPartContext, siteUrl: string) => {
     return profile;
   };
 
-  const getistItems = async (ListName, count) => {
+  const getistItems = async (
+    ListName,
+    seletArray = [],
+    expandCol = "",
+    orderByCol = "Id",
+    count = 5000
+  ) => {
     try {
       let items: any[] = [];
-      if (count > 0) {
-        items = await siteWeb.lists
-          .getByTitle(ListName)
-          .items.select(
-            "ID",
-            "Title",
-            "PageContent",
-            "Department",
-            "PageContent",
-            "ArticleDate",
-            "Category"
-          )
-          .expand("AttachmentFiles")
-          .orderBy("ArticleDate")
-          .top(count)
-          .get();
-      } else {
-        items = await siteWeb.lists.getByTitle(ListName).items.get();
-      }
-      //debugger;
+
+      items = await siteWeb.lists
+        .getByTitle(ListName)
+        .items.select(seletArray)
+        .expand(expandCol)
+        .orderBy(orderByCol)
+        .top(count)
+        .get();
+
+      debugger;
+      // if (count > 0) {
+
+      //   // items = await siteWeb.lists
+      //   //   .getByTitle(ListName)
+      //   //   .items.select(
+      //   //     "ID",
+      //   //     "Title",
+      //   //     "PageContent",
+      //   //     "Department",
+      //   //     "PageContent",
+      //   //     "ArticleDate",
+      //   //     "Category"
+      //   //   )
+      //   //   .expand("AttachmentFiles")
+      //   //   .orderBy("ArticleDate")
+      //   //   .top(count)
+      //   //   .get();
+      // } else {
+      //   items = await siteWeb.lists.getByTitle(ListName).items.get();
+      // }
 
       return items;
     } catch (error) {

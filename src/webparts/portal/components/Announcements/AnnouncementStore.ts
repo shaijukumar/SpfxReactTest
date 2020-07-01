@@ -6,14 +6,40 @@ export default class AnnouncementStore extends PortalBaseStore {
     super(spContext, "AnnouncementMaster");
   }
 
-  GetHomeItems = async (count?: number) => {
-    // var restURL =
-    //   _spPageContextInfo.webAbsoluteUrl +
-    //   "/_api/web/lists/getByTitle('AnnouncementMaster')/items?" +
-    //   "$Select=ID,Title,PageContent,Department,PageContent,ArticleDate,Category&$Orderby=ArticleDate&$top=6&$expand=AttachmentFiles";
-    // $scope.AnnouncementsData = GetHomeAnnouncements(restURL);
+  announcements: any[] = [];
 
-    this.homePageItems = await this.spService.getistItems(this.listName, count);
+  seletArray = [
+    "ID",
+    "Title",
+    "PageContent",
+    "Department",
+    "PageContent",
+    "ArticleDate",
+    "Category",
+    "PageContent",
+  ];
+
+  GeItems = async () => {
+    this.announcements = await this.rootGetItems(
+      this.seletArray,
+      "AttachmentFiles",
+      "ArticleDate"
+    );
+
+    return this.announcements;
+  };
+
+  GetHomeItems = async () => {
+    this.homePageItems = await this.rootGetItems(
+      this.seletArray,
+      "AttachmentFiles",
+      "ArticleDate",
+      6
+    );
     return this.homePageItems;
   };
+
+  SetItem(item: any) {
+    this.item = item;
+  }
 }

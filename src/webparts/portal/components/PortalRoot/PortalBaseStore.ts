@@ -19,18 +19,35 @@ export default class PortalBaseStore {
     this.spService = SPService(this.spContext, this.siteUrl);
   }
 
-  rootGetHomeItems = async (count?: number) => {
-    this.homePageItems = await this.spService.getistItems(this.listName, count);
+  rootGetHomeItems = async (
+    seletArray?: any,
+    expandCol?: any,
+    orderByCol?: any,
+    count?: number
+  ) => {
+    this.homePageItems = await this.spService.getistItems(
+      this.listName,
+      seletArray,
+      expandCol,
+      orderByCol,
+      count
+    );
     return this.homePageItems;
   };
 
-  rootGetItems = async (count?: number) => {
-    if (count > 0) {
-      this.items = await this.spService.getAllListItems(this.listName);
-    } else {
-      this.items = await this.spService.getAllListItems(this.listName);
-    }
-
+  rootGetItems = async (
+    seletArray?: any,
+    expandCol?: any,
+    orderByCol?: any,
+    count?: number
+  ) => {
+    this.items = await this.spService.getistItems(
+      this.listName,
+      seletArray,
+      expandCol,
+      orderByCol,
+      count
+    );
     return this.items;
   };
 

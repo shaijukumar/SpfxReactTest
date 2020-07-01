@@ -44,6 +44,27 @@ section .welcomeWrapper .row {
   color: #c42033;
 }
 
+/*********************  common ******************/
+h1 {
+  font-size: 32px;
+  line-height: 48px;
+  font-weight: 300;
+  margin: 5px 0 0px;
+}
+
+.h1 {
+  font-size: 32px;
+  line-height: 48px;
+  font-weight: 300;
+  margin: 5px 0 0px;
+}
+
+h1 + .divider {
+  margin: 10px 0 20px 0;
+}
+
+/*********************  common ******************/
+
 /*********************  announcements ******************/
 
 .announcements {
@@ -164,3 +185,33 @@ section .welcomeWrapper .row {
 }
 
 /*********************  end of announcements ******************/
+
+/*********************  breadcrumbWrapper ******************/
+
+.container .breadcrumbWrapper.row {
+  margin: 0;
+}
+.breadcrumbWrapper span.breadcrumb {
+  color: #000;
+  font-size: 0.8rem;
+}
+.breadcrumbWrapper .breadcrumb:before {
+  padding: 0;
+  margin: 0 !important;
+  padding-left: 10px;
+  width: 0;
+}
+.breadcrumbWrapper a.breadcrumb {
+  color: #039be5;
+  font-size: 0.8rem;
+  text-decoration: none;
+}
+.breadcrumbWrapper a.breadcrumb:after {
+  color: #000;
+  font-size: 0.9rem;
+  content: "\003e";
+  padding-right: 10px;
+  margin: 0 !important;
+}
+
+/*********************  end of breadcrumbWrapper ******************/
