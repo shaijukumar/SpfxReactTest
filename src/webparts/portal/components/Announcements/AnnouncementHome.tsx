@@ -8,20 +8,12 @@ import "slick-carousel/slick/slick-theme.css";
 
 import PortalRootStore from "../PortalRoot/PortalRootStore";
 
-export interface IListItemsProps {}
+export interface IListItemsProps { }
 
-const Announcements: React.FC<IListItemsProps> = (props) => {
+const AnnouncementHome: React.FC<IListItemsProps> = (props) => {
   const { homeStore } = useContext(PortalRootStore);
 
   const [todayWeek, setTodayWeek] = useState("Day");
-
-  // useEffect(() => {
-  //   if (homeStore.variations && homeStore.currentUser) {
-  //     const v = homeStore.variations;
-  //     try {
-  //     } catch (err) {}
-  //   }
-  // }, [homeStore.currentUser, homeStore.variations]);
 
   const settings = {
     dots: true,
@@ -61,7 +53,7 @@ const Announcements: React.FC<IListItemsProps> = (props) => {
                   <span className="siteDepartment">
                     <span
                       className="badgeTag"
-                      // ng-class="{'GeneralTag':  (GeneralSettings.DefaultDept === x.Department || !x.Department )}"
+                    // ng-class="{'GeneralTag':  (GeneralSettings.DefaultDept === x.Department || !x.Department )}"
                     >
                       {ann.Department
                         ? ann.Department
@@ -88,4 +80,4 @@ const Announcements: React.FC<IListItemsProps> = (props) => {
   );
 };
 
-export default Announcements;
+export default AnnouncementHome;

@@ -4,9 +4,9 @@ import { useContext, useState } from "react";
 import PortalRootStore from "../PortalRoot/PortalRootStore";
 import Screen from "../PortalRoot/Screen";
 import Welcome from "../Welcome/Welcome";
-import Announcements from "../Announcements/Announcements";
+import AnnouncementHome from "../Announcements/AnnouncementHome";
 
-export interface IListItemsProps {}
+export interface IListItemsProps { }
 
 const HomePage: React.FC<IListItemsProps> = (props) => {
   const { homeStore, announcementStore } = useContext(PortalRootStore);
@@ -26,7 +26,7 @@ const HomePage: React.FC<IListItemsProps> = (props) => {
     <div>
       <Screen loading={load}>
         <Welcome />
-        <Announcements />
+        <AnnouncementHome />
 
         <div className="row divre-order">
           <div className="col s12 m12 l9">News</div>
