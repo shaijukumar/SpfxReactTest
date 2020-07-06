@@ -17,11 +17,20 @@
           "manifest": "./src/webparts/portal/PortalWebPart.manifest.json"
         }
       ]
+    },
+    "shopping-list-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/shoppingList/ShoppingListWebPart.js",
+          "manifest": "./src/webparts/shoppingList/ShoppingListWebPart.manifest.json"
+        }
+      ]
     }
   },
   "externals": {},
   "localizedResources": {
     "DemoWebPartStrings": "lib/webparts/demo/loc/{locale}.js",
-    "PortalWebPartStrings": "lib/webparts/portal/loc/{locale}.js"
+    "PortalWebPartStrings": "lib/webparts/portal/loc/{locale}.js",
+    "ShoppingListWebPartStrings": "lib/webparts/shoppingList/loc/{locale}.js"
   }
 }

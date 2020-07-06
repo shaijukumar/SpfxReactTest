@@ -57,7 +57,7 @@ const AnnouncementsDeails: React.FC<IListItemsProps> = (props) => {
             <div className="row">
               <h5 className="col s12">{v["Announcements-More"]}</h5>
               <div>
-                {homeStore.announcements.map((a) => (
+                {homeStore.announcements.slice(0, 4).map((a) => (
                   <div className="col s12 m3">{a.Title}</div>
                 ))}
               </div>

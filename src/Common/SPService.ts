@@ -27,7 +27,7 @@ export const SPService = (spContext: WebPartContext, siteUrl: string) => {
   ) => {
     try {
       let items: any[] = [];
-
+      debugger;
       items = await siteWeb.lists
         .getByTitle(ListName)
         .items.select(seletArray)

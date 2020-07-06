@@ -41,6 +41,7 @@
     "react-moment": "^0.9.7",
     "react-router-dom": "^5.2.0",
     "react-slick": "^0.26.1",
+    "rsuite": "^4.7.5",
     "rxjs": "^6.0.0",
     "slick-carousel": "^1.8.1",
     "yup": "^0.29.1"
