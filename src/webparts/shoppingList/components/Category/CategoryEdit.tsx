@@ -46,7 +46,20 @@ const CategoryEdit: React.FC = () => {
     debugger;
     setSubmitting(true);
     categoryStore.updateListItem(values).then(() => {
+      history.push("/CategoryList");
+    });
+  };
+
+  const onBack = () => {
+    history.push("/CategoryList");
+  };
+
+  const onDelete = () => {
+    setSubmitting(true);
+    debugger;
+    categoryStore.deleteListItem(id).then(() => {
       setSubmitting(false);
+      history.push("/CategoryList");
     });
   };
 
@@ -62,13 +75,8 @@ const CategoryEdit: React.FC = () => {
 
         <ButtonGroup>
           <SubmitButton title="Submit" loader={submitting} />
-          <AppButton
-            title="Back"
-            onClick={() => {
-              history.push("/CategoryList");
-            }}
-            loader={submitting}
-          />
+          <AppButton title="Delete" onClick={onDelete} loader={submitting} />
+          <AppButton title="Back" onClick={onBack} loader={submitting} />
         </ButtonGroup>
       </AppForm>
     </Screen>

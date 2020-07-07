@@ -70,6 +70,11 @@ export default class ShoppingBaseStore {
     return this.item;
   };
 
+  deleteListItem = async (id: number) => {
+    this.item = await this.spService.deleteListItem(this.listName, id);
+    //await this.Sleep();
+  };
+
   Sleep(ms: number = 1000) {
     return new Promise((resolve) => {
       setTimeout(() => {
