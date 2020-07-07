@@ -8,8 +8,7 @@ import {
 import { BaseClientSideWebPart } from "@microsoft/sp-webpart-base";
 
 import * as strings from "ShoppingListWebPartStrings";
-import ShoppingList from "./components/ShoppingList";
-import { IShoppingListProps } from "./components/IShoppingListProps";
+
 import { IShoppingRootProps } from "./components/ShoppingRoot/IShoppingRootProps";
 import ShoppingRoot from "./components/ShoppingRoot/ShoppingRoot";
 

@@ -29,6 +29,7 @@
     "@types/webpack-env": "1.13.1",
     "core-js": "^3.6.5",
     "formik": "^2.1.4",
+    "jodit-react": "^1.0.51",
     "jquery": "^3.5.1",
     "mobx": "2.4.1",
     "mobx-react": "^6.2.2",

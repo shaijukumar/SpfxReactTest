@@ -10,38 +10,31 @@ import {
   RouteComponentProps,
 } from "react-router-dom";
 
+import CategoryEdit from "../Category/CategoryEdit";
+
 import "../../Style/ShoppingStyle.css";
 
 import ShoppingHomePage from "../ShoppingHomePage/ShoppingHomePage";
+import CategoryList from "../Category/CategoryList";
 
 const ShoppingNavigation: React.FC<RouteComponentProps> = (location) => {
   return (
     <Router>
       <div>
-        {/* <div>
-          <div style={{ float: "left", paddingRight: "10px" }}>
-            <Link to="/">HomePage</Link>{" "}
-          </div>
-          <div style={{ float: "left" }}>
-            <Link to="/Welcome">Welcome</Link>
-          </div>
-        </div>
-        <br /> */}
         <Switch>
-          {/* <Route path="/Announcement">
-            <AnnouncementsDeails />
-          </Route>
-          <Route path="/Announcements">
-            <AnnouncementList />
-          </Route> */}
-
-          {/* <Route
+          <Route
             key={location.key}
-            path={['/NewTest1/', '/EditTest1/:id']}
-            component={EditTest1} /> */}
+            path={["/NewCategory/", "/Category/:id"]}
+            component={CategoryEdit}
+          />
+          <Route
+            key={location.key}
+            path={["/CategoryList/"]}
+            component={CategoryList}
+          />
 
           <Route path="/">
-            <ShoppingHomePage />
+            <CategoryList />
           </Route>
         </Switch>
       </div>

@@ -24,12 +24,12 @@ const ShoppingRoot: React.FC<IShoppingRootProps> = (props) => {
     // jQuery("#workbenchPageContent").prop("style", "max-width: none");
     // jQuery(".SPCanvas-canvas").prop("style", "max-width: none");
     // jQuery(".CanvasZone").prop("style", "max-width: none");
-    // setTimeout(() => {
-    //   var myElement = jQuery(
-    //     'button[data-automation-id="workbench-command-bar-preview"]'
-    //   ).click();
-    //   jQuery(".dragIconContainer_90be1210").prop("style", "visibility: hidden");
-    // }, 100);
+    setTimeout(() => {
+      var myElement = jQuery(
+        'button[data-automation-id="workbench-command-bar-preview"]'
+      ).click();
+      jQuery(".dragIconContainer_90be1210").prop("style", "visibility: hidden");
+    }, 100);
   }, []);
 
   // const [contextValue, SetContextValue] = React.useState(null);

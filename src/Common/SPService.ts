@@ -25,9 +25,10 @@ export const SPService = (spContext: WebPartContext, siteUrl: string) => {
     orderByCol = "Id",
     count = 5000
   ) => {
+    //debugger;
     try {
       let items: any[] = [];
-      debugger;
+      //debugger;
       items = await siteWeb.lists
         .getByTitle(ListName)
         .items.select(seletArray)
@@ -35,28 +36,6 @@ export const SPService = (spContext: WebPartContext, siteUrl: string) => {
         .orderBy(orderByCol)
         .top(count)
         .get();
-
-      debugger;
-      // if (count > 0) {
-
-      //   // items = await siteWeb.lists
-      //   //   .getByTitle(ListName)
-      //   //   .items.select(
-      //   //     "ID",
-      //   //     "Title",
-      //   //     "PageContent",
-      //   //     "Department",
-      //   //     "PageContent",
-      //   //     "ArticleDate",
-      //   //     "Category"
-      //   //   )
-      //   //   .expand("AttachmentFiles")
-      //   //   .orderBy("ArticleDate")
-      //   //   .top(count)
-      //   //   .get();
-      // } else {
-      //   items = await siteWeb.lists.getByTitle(ListName).items.get();
-      // }
 
       return items;
     } catch (error) {
@@ -66,7 +45,6 @@ export const SPService = (spContext: WebPartContext, siteUrl: string) => {
   };
 
   const getAllListItems = async (ListName) => {
-    //web.lists.getByTitle("My List").items.select("Title", "Description").top(5).orderBy("Modified", true).get();
     try {
       let items: any[] = [];
       items = await siteWeb.lists.getByTitle(ListName).items.get();
@@ -78,20 +56,24 @@ export const SPService = (spContext: WebPartContext, siteUrl: string) => {
     }
   };
 
-  const getItemById = async (ListName, Id) => {
+  const getItemById = async (
+    ListName,
+    Id,
+    seletArray = [],
+    expandCol = "",
+    orderByCol = "Id"
+  ) => {
     //debugger;
     try {
       const item: any = await siteWeb.lists
         .getByTitle(ListName)
+        .select(seletArray)
+        .expand(expandCol)
         .items.getById(Id)
         .get();
-
-      //const item: any = await sp.web.lists.getByTitle("My List").items.getById(1).get();
-
-      //debugger;
       return item;
     } catch (error) {
-      debugger;
+      //debugger;
       console.error(error);
       return {};
     }

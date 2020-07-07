@@ -1,12 +1,12 @@
 import { WebPartContext } from "@microsoft/sp-webpart-base";
-import ShoppingBaseStore from "../components/ShoppingRoot/ShoppingBaseStore";
+import ShoppingBaseStore from "../ShoppingRoot/ShoppingBaseStore";
 
 export default class ProductStore extends ShoppingBaseStore {
   constructor(spContext: WebPartContext) {
     super(spContext, "Product");
   }
 
-  products: any[] = [];
+  //products: any[] = [];
 
   seletArray = [
     "ID",
@@ -17,14 +17,19 @@ export default class ProductStore extends ShoppingBaseStore {
     "CurrentStock",
   ];
 
-  GeItems = async () => {
-    this.products = await this.rootGetItems(this.seletArray);
-    return this.products;
-  };
+  // GeItems = async () => {
+  //   this.products = await this.rootGetItems(this.seletArray);
+  //   return this.products;
+  // };
 
-  SetItem(item: any) {
-    this.item = item;
-  }
+  // SetItem(item: any) {
+  //   this.item = item;
+  // }
+
+  // createListItem = async (values: any) => {
+  //   debugger;
+  //   await this.spService.createListItem(this.listName, values);
+  // };
 
   //   updateListItem = async (id: string, values: any) => {
   //     this.setSubmitting && this.setSubmitting(true);

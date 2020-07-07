@@ -3,25 +3,26 @@ import { useContext, useState } from "react";
 import ShoppingRootStore from "../ShoppingRoot/ShoppingRootStore";
 import "rsuite/dist/styles/rsuite-default.css"; //'rsuite/dist/styles/rsuite-default.css'
 import { Button } from "rsuite";
+import CategoryList from "../Category/CategoryList";
 export interface IListItemsProps {}
 
 const ShoppingHomePage: React.FC<IListItemsProps> = (props) => {
-  const { categoryStore } = useContext(ShoppingRootStore);
+  // const { categoryStore } = useContext(ShoppingRootStore);
 
-  const [categories, setCategories] = useState([]);
+  // const [categories, setCategories] = useState([]);
 
-  React.useEffect(() => {
-    categoryStore.GeItems().then((cl) => {
-      debugger;
-      setCategories(cl);
-    });
-  }, [categoryStore.GeItems]);
+  // React.useEffect(() => {
+  //   categoryStore.geItems().then((cl) => {
+  //     debugger;
+  //     setCategories(cl);
+  //   });
+  // }, [categoryStore.geItems]);
 
   return (
     <div>
-      <h1>Shopping Home Page112</h1>
-      <Button>Hello World</Button>
-      {categories && categories.map((cat) => <div>{cat.Title}</div>)}
+      <div>Test112 </div>
+      <CategoryList />
+      {/* {categories && categories.map((cat) => <div>{cat.Title}</div>)} */}
     </div>
   );
 };

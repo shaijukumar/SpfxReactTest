@@ -1,6 +1,13 @@
 import { WebPartContext } from "@microsoft/sp-webpart-base";
 import { SPService } from "../../../../Common/SPService";
 
+export class GetItemParms {
+  seletArray?: any = [];
+  expandCol?: any = "";
+  orderByCol?: string = "Id";
+  count?: number = 5000;
+}
+
 export default class ShoppingBaseStore {
   spContext: WebPartContext;
   siteUrl: string;
@@ -8,8 +15,8 @@ export default class ShoppingBaseStore {
   listName: string;
   setLoading: any;
   setSubmitting: any;
+
   items: any[] = [];
-  homePageItems: any[] = [];
   item: any;
 
   constructor(spContext: WebPartContext, listName: string) {
@@ -19,62 +26,55 @@ export default class ShoppingBaseStore {
     this.spService = SPService(this.spContext, this.siteUrl);
   }
 
-  rootGetHomeItems = async (
-    seletArray?: any,
-    expandCol?: any,
-    orderByCol?: any,
-    count?: number
-  ) => {
-    this.homePageItems = await this.spService.getistItems(
-      this.listName,
-      seletArray,
-      expandCol,
-      orderByCol,
-      count
-    );
-    return this.homePageItems;
-  };
-
-  rootGetItems = async (
-    seletArray?: any,
-    expandCol?: any,
-    orderByCol?: any,
-    count?: number
-  ) => {
+  getItems = async (parrms: GetItemParms = new GetItemParms()) => {
+    //debugger;
     this.items = await this.spService.getistItems(
       this.listName,
-      seletArray,
-      expandCol,
-      orderByCol,
-      count
+      parrms.seletArray,
+      parrms.expandCol,
+      parrms.orderByCol,
+      parrms.count
     );
+    // await this.Sleep(3000);
     return this.items;
   };
 
-  rootGetAllItems = async () => {
-    this.items = await this.spService.getAllListItems(this.listName);
-    await this.Sleep();
-    return this.items;
-  };
-
-  rootGetItemById = async (id: string) => {
+  getItemById = async (
+    id: string,
+    parrms: GetItemParms = new GetItemParms()
+  ) => {
     //debugger;
-    this.items = await this.spService.getItemById(this.listName, id);
-    await this.Sleep();
-    return this.items;
+    this.item = await this.spService.getItemById(
+      this.listName,
+      id,
+      parrms.seletArray,
+      parrms.expandCol,
+      parrms.orderByCol
+    );
+    //await this.Sleep();
+    return this.item;
   };
 
-  rootcreateListItem = async (data: any) => {
-    this.items = await this.spService.createListItem(this.listName, data);
+  updateListItem = async (data: any) => {
+    if (data.Id) {
+      this.items = await this.spService.updateListItem(
+        this.listName,
+        data.Id,
+        data
+      );
+    } else {
+      this.item = await this.spService.createListItem(this.listName, data);
+    }
+
     await this.Sleep();
-    return this.items;
+    return this.item;
   };
 
-  Sleep() {
+  Sleep(ms: number = 1000) {
     return new Promise((resolve) => {
       setTimeout(() => {
         resolve(true);
-      }, 100);
+      }, ms);
     });
   }
 }

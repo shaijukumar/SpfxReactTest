@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import ActivityIndicator from "../Common/ActivityIndicator";
+import ActivityIndicator from "./ActivityIndicator";
 export interface IListItemsProps {}
 
 export interface IScreenProps {
