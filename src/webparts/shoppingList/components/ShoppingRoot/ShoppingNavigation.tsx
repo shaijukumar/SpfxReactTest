@@ -2,20 +2,16 @@ import * as React from "react";
 import {
   BrowserRouter as Router,
   Route,
-  Link,
-  Redirect,
   Switch,
-  HashRouter,
-  PropsRoute,
   RouteComponentProps,
 } from "react-router-dom";
 
-import CategoryEdit from "../Category/CategoryEdit";
-
-import "../../Style/ShoppingStyle.css";
-
 import ShoppingHomePage from "../ShoppingHomePage/ShoppingHomePage";
 import CategoryList from "../Category/CategoryList";
+import CategoryEdit from "../Category/CategoryEdit";
+import ProductList from "../Product/ProductList";
+import ProductEdit from "../Product/ProductEdit";
+//###NavigationImport###
 
 const ShoppingNavigation: React.FC<RouteComponentProps> = (location) => {
   return (
@@ -32,9 +28,20 @@ const ShoppingNavigation: React.FC<RouteComponentProps> = (location) => {
             path={["/CategoryList/"]}
             component={CategoryList}
           />
+          <Route
+            key={location.key}
+            path={["/NewProduct/", "/Product/:id"]}
+            component={ProductEdit}
+          />
+          <Route
+            key={location.key}
+            path={["/ProductList/"]}
+            component={ProductList}
+          />
+          {/* ##Navigation## */}
 
           <Route path="/">
-            <CategoryList />
+            <ProductList />
           </Route>
         </Switch>
       </div>

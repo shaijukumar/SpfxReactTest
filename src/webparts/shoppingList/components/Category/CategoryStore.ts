@@ -1,4 +1,4 @@
-import ShoppingBaseStore from "../ShoppingRoot/ShoppingBaseStore";
+import BaseStore from "../../../../Common/BaseStore";
 import { WebPartContext } from "@microsoft/sp-webpart-base";
 
 export class Category {
@@ -12,7 +12,7 @@ export class Category {
 
 const seletArray = ["Id", "Title"];
 
-export default class CategoryStore extends ShoppingBaseStore {
+export default class CategoryStore extends BaseStore {
   constructor(spContext: WebPartContext) {
     super(spContext, "Category");
   }

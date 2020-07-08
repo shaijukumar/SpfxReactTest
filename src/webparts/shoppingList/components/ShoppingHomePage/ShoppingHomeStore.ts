@@ -1,7 +1,7 @@
-import ShoppingBaseStore from "../ShoppingRoot/ShoppingBaseStore";
+import BaseStore from "../../../../Common/BaseStore";
 import { WebPartContext } from "@microsoft/sp-webpart-base";
 
-export default class HomeStore extends ShoppingBaseStore {
+export default class HomeStore extends BaseStore {
   currentUser: any;
   variations: any;
   announcements: any = [];

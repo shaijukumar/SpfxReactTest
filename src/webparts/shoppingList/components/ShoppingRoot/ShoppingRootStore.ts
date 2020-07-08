@@ -1,28 +1,26 @@
 import { createContext, useMemo, useState } from "react";
 import { WebPartContext } from "@microsoft/sp-webpart-base";
 import CategoryStore from "../Category/CategoryStore";
-//import { SPService } from "../../../../Common/SPService";
+import ProductStore from "../Product/ProductStore";
+//###StoreImport###
 
 export const ShoppingRrootInit = (spContext: WebPartContext): any => {
   const [categoryStore, setCategory] = useState(new CategoryStore(spContext));
-  // const [announcementStore, setAnnouncementStore] = useState(
-  //   new AnnouncementStore(spContext)
-  // );
-  // const [homeStore, setHomeStore] = useState(new HomeStore(spContext));
-  // const [homeStore, setHomeStore] = useState(new HomeStore(spContext));
-  // const [homeStore, setHomeStore] = useState(new HomeStore(spContext));
-  // const [homeStore, setHomeStore] = useState(new HomeStore(spContext));
+  const [testStore, setProduct] = useState(new ProductStore(spContext));
+  //###StoreStateDef###
 
   const contextValue = useMemo(() => {
     return {
       spContext,
       categoryStore,
-      //announcementStore,
+      testStore,
+      //###StoreName###
     };
   }, [
     spContext,
     categoryStore,
-    //announcementStore
+    testStore,
+    //###StoreName###
   ]);
 
   return contextValue;
@@ -32,7 +30,8 @@ interface InitContextProps {
   spContext: WebPartContext;
   spService: any;
   categoryStore: CategoryStore;
-  //announcementStore: AnnouncementStore;
+  testStore: ProductStore;
+  //###StoreProps###
 }
 
 const ShoppingRootStore = createContext<InitContextProps>(undefined);

@@ -1,5 +1,5 @@
 import { WebPartContext } from "@microsoft/sp-webpart-base";
-import { SPService } from "../../../../Common/SPService";
+import { SPService } from "./SPService";
 
 export class GetItemParms {
   seletArray?: any = [];
@@ -8,26 +8,22 @@ export class GetItemParms {
   count?: number = 5000;
 }
 
-export default class ShoppingBaseStore {
+export default class BaseStore {
   spContext: WebPartContext;
   siteUrl: string;
   spService: any;
   listName: string;
   setLoading: any;
-  setSubmitting: any;
-
   items: any[] = [];
   item: any;
 
   constructor(spContext: WebPartContext, listName: string) {
-    //debugger;
     this.listName = listName;
     this.siteUrl = spContext.pageContext.site.absoluteUrl + "/shop";
     this.spService = SPService(this.spContext, this.siteUrl);
   }
 
   getItems = async (parrms: GetItemParms = new GetItemParms()) => {
-    //debugger;
     this.items = await this.spService.getistItems(
       this.listName,
       parrms.seletArray,

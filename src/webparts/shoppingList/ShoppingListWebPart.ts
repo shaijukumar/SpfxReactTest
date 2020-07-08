@@ -9,7 +9,7 @@ import { BaseClientSideWebPart } from "@microsoft/sp-webpart-base";
 
 import * as strings from "ShoppingListWebPartStrings";
 
-import { IShoppingRootProps } from "./components/ShoppingRoot/IShoppingRootProps";
+import { IRootProps } from "../../Common/IRootProps";
 import ShoppingRoot from "./components/ShoppingRoot/ShoppingRoot";
 
 export interface IShoppingListWebPartProps {
@@ -26,7 +26,7 @@ export default class ShoppingListWebPart extends BaseClientSideWebPart<
     //     description: this.properties.description
     //   }
     // );
-    const element: React.ReactElement<IShoppingRootProps> = React.createElement(
+    const element: React.ReactElement<IRootProps> = React.createElement(
       ShoppingRoot,
       {
         description: this.properties.description,

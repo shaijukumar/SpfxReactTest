@@ -1,4 +1,4 @@
-import ShoppingBaseStore from "../_WpName_Root/_WpName_BaseStore";
+import BaseStore from "../../../../Common/BaseStore";
 import { WebPartContext } from "@microsoft/sp-webpart-base";
 
 export class _ListTitle_ {
@@ -12,7 +12,7 @@ export class _ListTitle_ {
 
 const seletArray = ["Id", "Title"];
 
-export default class _ListTitle_Store extends _WpName_BaseStore {
+export default class CategoryStore extends BaseStore {
   constructor(spContext: WebPartContext) {
     super(spContext, "_ListTitle_");
   }

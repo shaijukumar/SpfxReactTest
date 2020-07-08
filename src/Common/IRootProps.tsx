@@ -1,6 +1,6 @@
 import { WebPartContext } from "@microsoft/sp-webpart-base";
 
-export interface IShoppingRootProps {
+export interface IRootProps {
   description: string;
   spContext: WebPartContext;
 }
