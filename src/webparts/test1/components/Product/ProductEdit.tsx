@@ -12,12 +12,12 @@ import {
   AppButton,
 } from "../../../../Common/Formik";
 
-import ShoppingRootStore from "../ShoppingRoot/ShoppingRootStore";
+import TestOneRootStore from "../TestOneRoot/TestOneRootStore";
 import { Product } from "./ProductStore";
 import { Formik } from "formik";
 
 const ProductEdit: React.FC = () => {
-  const { testStore, spContext } = useContext(ShoppingRootStore);
+  const { testStore, spContext } = useContext(TestOneRootStore);
 
   const [test, setProduct] = useState(new Product());
   const [load, setLoad] = useState(false);

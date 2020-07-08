@@ -12,7 +12,7 @@ export class _ListTitle_ {
 
 const seletArray = ["Id", "Title"];
 
-export default class CategoryStore extends BaseStore {
+export default class _ListTitle_Store extends BaseStore {
   constructor(spContext: WebPartContext) {
     super(spContext, "_ListTitle_");
   }

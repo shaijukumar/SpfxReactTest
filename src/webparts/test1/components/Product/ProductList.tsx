@@ -4,13 +4,13 @@ import { Link, useHistory } from "react-router-dom";
 import { Table, Button } from "rsuite";
 
 import Screen from "../../../../Common/Screen";
-import ShoppingRootStore from "../ShoppingRoot/ShoppingRootStore";
+import TestOneRootStore from "../TestOneRoot/TestOneRootStore";
 import { Product } from "./ProductStore";
 
 export interface IListItemsProps {}
 
 const ProductList: React.FC = (props) => {
-  const { testStore, spContext } = useContext(ShoppingRootStore);
+  const { testStore, spContext } = useContext(TestOneRootStore);
 
   const cl: Product[] = [];
   const [tests, setCategories] = useState(cl);

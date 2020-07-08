@@ -7,13 +7,13 @@ import Screen from "../../../../Common/Screen";
 import _WpName_RootStore from "../_WpName_Root/_WpName_RootStore";
 import { _ListTitle_ } from "./_ListTitle_Store";
 
-export interface IListItemsProps { }
+export interface IListItemsProps {}
 
 const _ListTitle_List: React.FC = (props) => {
-  const { categoryStore, spContext } = useContext(_WpName_RootStore);
+  const { _ListTitleObj_Store, spContext } = useContext(_WpName_RootStore);
 
   const cl: _ListTitle_[] = [];
-  const [categories, setCategories] = useState(cl);
+  const [_ListTitleObj_s, setCategories] = useState(cl);
   const [load, setLoad] = useState(false);
 
   const [submitting, setSubmitting] = useState(false);
@@ -21,19 +21,17 @@ const _ListTitle_List: React.FC = (props) => {
   let history = useHistory();
 
   React.useEffect(() => {
-    // const sa = ["Id", "Title"];
-    // categoryStore.getItems({ seletArray: sa }).then((cl) => {
     setLoad(true);
-    categoryStore.getItems().then((cl) => {
+    _ListTitleObj_Store.getItems().then((cl) => {
       //debugger;
       setCategories(cl);
       setLoad(false);
     });
-  }, [categoryStore.getItems]);
+  }, [_ListTitleObj_Store.getItems]);
 
   return (
     <Screen loading={false}>
-      {/* {categories.length > 0 && categories.map((cat) => <div>{cat.Title}</div>)} */}
+      {/* {_ListTitleObj_s.length > 0 && _ListTitleObj_s.map((item) => <div>{item.Title}</div>)} */}
 
       <Button
         appearance="link"
@@ -46,7 +44,7 @@ const _ListTitle_List: React.FC = (props) => {
 
       <Table
         height={400}
-        data={categories}
+        data={_ListTitleObj_s}
         loading={load}
         onRowClick={(data) => {
           //console.log(data);
