@@ -52,6 +52,7 @@ export default class BaseStore {
   };
 
   updateListItem = async (data: any) => {
+    debugger;
     if (data.Id) {
       this.items = await this.spService.updateListItem(
         this.listName,

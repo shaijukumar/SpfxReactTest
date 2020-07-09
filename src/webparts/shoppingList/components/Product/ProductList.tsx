@@ -1,19 +1,20 @@
 import * as React from "react";
 import { useContext, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
-import { Table, Button } from "rsuite";
+import { Button, Grid, Col } from "rsuite";
 
 import Screen from "../../../../Common/Screen";
 import ShoppingRootStore from "../ShoppingRoot/ShoppingRootStore";
 import { Product } from "./ProductStore";
+import ProductCounter from "./ProductCounter";
 
 export interface IListItemsProps {}
 
 const ProductList: React.FC = (props) => {
-  const { testStore, spContext } = useContext(ShoppingRootStore);
+  const { productStore, spContext } = useContext(ShoppingRootStore);
 
   const cl: Product[] = [];
-  const [tests, setCategories] = useState(cl);
+  const [products, setProducts] = useState(cl);
   const [load, setLoad] = useState(false);
 
   const [submitting, setSubmitting] = useState(false);
@@ -22,12 +23,12 @@ const ProductList: React.FC = (props) => {
 
   React.useEffect(() => {
     setLoad(true);
-    testStore.getItems().then((cl) => {
+    productStore.getItems().then((cl) => {
       //debugger;
-      setCategories(cl);
+      setProducts(cl);
       setLoad(false);
     });
-  }, [testStore.getItems]);
+  }, [productStore.getItems]);
 
   return (
     <Screen loading={false}>
@@ -36,15 +37,35 @@ const ProductList: React.FC = (props) => {
       <Button
         appearance="link"
         onClick={() => {
+          history.push("/");
+        }}
+      >
+        Back to home
+      </Button>
+
+      <Button
+        appearance="link"
+        onClick={() => {
           history.push("/NewProduct");
         }}
       >
-        Add New
+        Add New1235
       </Button>
 
-      <Table
+      {products.map((p) => (
+        <div style={{ clear: "both" }}>
+          <div style={{ width: 300, float: "left" }}>
+            {p.Title} - {p.RequiredStock}
+          </div>
+          <div style={{ width: 100, float: "left" }}>
+            <ProductCounter name="CurrentStock" product={p} />
+          </div>
+        </div>
+      ))}
+
+      {/* <Table
         height={400}
-        data={tests}
+        data={products}
         loading={load}
         onRowClick={(data) => {
           //console.log(data);
@@ -60,10 +81,24 @@ const ProductList: React.FC = (props) => {
           <Table.HeaderCell>Title</Table.HeaderCell>
           <Table.Cell dataKey="Title" />
         </Table.Column>
-      </Table>
+     
+        <Table.Column width={100} align="left">
+          <Table.HeaderCell>QtyType</Table.HeaderCell>
+          <Table.Cell dataKey="QtyType" />
+        </Table.Column>
+
+        <Table.Column width={100} align="left">
+          <Table.HeaderCell>Required Stock</Table.HeaderCell>
+          <Table.Cell dataKey="RequiredStock" />
+        </Table.Column>
+
+        <Table.Column width={100} align="left">
+          <Table.HeaderCell>CurrentStock</Table.HeaderCell>
+          <Table.Cell dataKey="CurrentStock" />
+        </Table.Column>
+      </Table> */}
     </Screen>
   );
 };
 
 export default ProductList;
-

@@ -2,7 +2,9 @@ import * as React from "react";
 import { useContext, useState } from "react";
 import ShoppingRootStore from "../ShoppingRoot/ShoppingRootStore";
 import "rsuite/dist/styles/rsuite-default.css"; //'rsuite/dist/styles/rsuite-default.css'
-import { Button } from "rsuite";
+
+import { Container, Header, Content, Footer, Sidebar } from "rsuite";
+
 import CategoryList from "../Category/CategoryList";
 export interface IListItemsProps {}
 

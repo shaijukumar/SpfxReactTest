@@ -5,3 +5,4 @@ export { default as AppSelector } from "./AppSelector";
 export { default as ButtonGroup } from "./ButtonGroup";
 export { default as ErrorMessage } from "./ErrorMessage";
 export { default as SubmitButton } from "./SubmitButton";
+export { default as DropDownPicker } from "./DropDownPicker";

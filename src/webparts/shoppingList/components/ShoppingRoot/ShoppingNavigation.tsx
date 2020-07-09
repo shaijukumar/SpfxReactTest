@@ -11,6 +11,7 @@ import CategoryList from "../Category/CategoryList";
 import CategoryEdit from "../Category/CategoryEdit";
 import ProductList from "../Product/ProductList";
 import ProductEdit from "../Product/ProductEdit";
+import ShoppingList from "../ShoppingList/ShoppingList";
 //###NavigationImport###
 
 const ShoppingNavigation: React.FC<RouteComponentProps> = (location) => {
@@ -18,6 +19,12 @@ const ShoppingNavigation: React.FC<RouteComponentProps> = (location) => {
     <Router>
       <div>
         <Switch>
+          <Route
+            key={location.key}
+            path={["/Shop/"]}
+            component={ShoppingList}
+          />
+
           <Route
             key={location.key}
             path={["/NewCategory/", "/Category/:id"]}
@@ -41,7 +48,7 @@ const ShoppingNavigation: React.FC<RouteComponentProps> = (location) => {
           {/* ##Navigation## */}
 
           <Route path="/">
-            <ProductList />
+            <ShoppingList />
           </Route>
         </Switch>
       </div>

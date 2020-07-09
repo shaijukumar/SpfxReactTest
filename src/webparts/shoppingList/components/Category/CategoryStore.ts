@@ -16,4 +16,16 @@ export default class CategoryStore extends BaseStore {
   constructor(spContext: WebPartContext) {
     super(spContext, "Category");
   }
+
+  getTree = async () => {
+    let catTree: any[] = [];
+    let items = await this.getItems();
+    items.forEach((cat) => {
+      var treeNode: any = {};
+      treeNode.value = cat.Id + "";
+      treeNode.label = cat.Title;
+      catTree.push(treeNode);
+    });
+    return catTree;
+  };
 }

@@ -6,20 +6,20 @@ import ProductStore from "../Product/ProductStore";
 
 export const ShoppingRrootInit = (spContext: WebPartContext): any => {
   const [categoryStore, setCategory] = useState(new CategoryStore(spContext));
-  const [testStore, setProduct] = useState(new ProductStore(spContext));
+  const [productStore, setProduct] = useState(new ProductStore(spContext));
   //###StoreStateDef###
 
   const contextValue = useMemo(() => {
     return {
       spContext,
       categoryStore,
-      testStore,
+      productStore,
       //###StoreName###
     };
   }, [
     spContext,
     categoryStore,
-    testStore,
+    productStore,
     //###StoreName###
   ]);
 
@@ -30,7 +30,7 @@ interface InitContextProps {
   spContext: WebPartContext;
   spService: any;
   categoryStore: CategoryStore;
-  testStore: ProductStore;
+  productStore: ProductStore;
   //###StoreProps###
 }
 

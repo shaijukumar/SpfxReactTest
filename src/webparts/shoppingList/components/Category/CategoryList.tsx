@@ -41,7 +41,16 @@ const CategoryList: React.FC = (props) => {
           history.push("/NewCategory");
         }}
       >
-        Add New
+        Add new
+      </Button>
+
+      <Button
+        appearance="link"
+        onClick={() => {
+          history.push("/");
+        }}
+      >
+        Back to home
       </Button>
 
       <Table
